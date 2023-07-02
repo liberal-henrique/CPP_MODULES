@@ -1,0 +1,65 @@
+What is OOP?
+
+OOP stands for Object-Oriented Programming.
+
+Classes and objects are the two main aspects of OOP.
+Everything in C++ is associated with classes and objects,
+along with its attributes and methods.
+
+For example: in real life, a car is an object.
+The car has attributes, such as weight and color,
+and methods, such as drive and brake.
+
+Attributes and methods are basically variables
+and functions that belongs to the class. These
+are often referred to as "class members".
+
+A class is a user-defined data type that we
+can use in our program, and it works as an
+object constructor, or a "blueprint" for
+creating objects.
+
+In C++, an object is created from a class.
+
+Methods are functions that belongs to the class.
+
+Note: You access methods just like you access attributes;
+ by creating an object of the class and using the dot syntax (.):
+
+To define a function outside the class definition, you have
+to declare it inside the class and then define it outside of
+the class. This is done by specifiying the name of the class,
+followed the scope resolution :: operator.
+
+Access Specifiers
+In C++, there are three access specifiers:
+
+PUBLIC - members are accessible from outside the class
+PRIVATE - members cannot be accessed from outside the class
+PROTECTED - members cannot be accessed from outside the
+class, however, they can be accessed in inherited classes.
+
+Note: By default, all members of a class are private
+if you don't specify an access specifier
+
+Encapsulation
+The meaning of Encapsulation, is to make sure that
+"sensitive" data is hidden from users.
+You must declare class variables/attributes as private.
+If you want others to read or modify the value of a private
+member, you can provide public get and set methods.
+
+Public Getter is a method to returns the value of the private attribute.
+Public Setter is a method takes a parameter and assigns it to
+the value of the private.
+
+
+Why Encapsulation?
+	It is considered good practice to declare your class attributes
+as private (as often as you can). Encapsulation ensures better
+control of your data, because you (or others) can change one part
+of the code without affecting other parts
+
+	Increased security of data.
+
+Inheritance
