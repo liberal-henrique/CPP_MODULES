@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:39 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/06 16:03:17 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/06 17:36:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int ac, char **av)
 		for (int i = 0; (pos = line.find(toReplace, pos)) != std::string::npos; i++) {
 			line.erase(pos, toReplace.length());
 			line.insert(pos, toInsert);
+			pos += toInsert.length();
 		}
 		pos = 0;
 		destFile << line << std::endl;
