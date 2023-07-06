@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 22:18:41 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 17:37:15 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/04 13:49:39 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name):_ZombieName(name) {}
+int	main(int ac, char **av) {
 
-Zombie::~Zombie() {
-	std::cout << "The Zombie " << this->_ZombieName << " was destroyed." << std::endl;
-}
+	if (ac < 2)
+		return (1);
 
-void	Zombie::announce() {
-	std::cout << this->_ZombieName << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	int	N = atoi(av[1]);
+	Zombie	*newHorde = zombieHorde(N, "Carlos");
+
+	delete[] newHorde;
 }

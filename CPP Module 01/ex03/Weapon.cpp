@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 22:18:41 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 17:37:15 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/04 16:06:13 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/05 13:52:41 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie(std::string name):_ZombieName(name) {}
-
-Zombie::~Zombie() {
-	std::cout << "The Zombie " << this->_ZombieName << " was destroyed." << std::endl;
+Weapon::Weapon() {
+	std::cout << "Weapon created with default constructor." << std::endl;
 }
 
-void	Zombie::announce() {
-	std::cout << this->_ZombieName << ": BraiiiiiiinnnzzzZ..." << std::endl;
+Weapon::Weapon(const std::string &kind) : _type(kind) {
+	std::cout << "Weapon created with a type" << std::endl;
+}
+
+Weapon::~Weapon() {}
+
+const std::string &Weapon::getType() {
+	return (this->_type);
+}
+
+void	Weapon::setType(std::string name) {
+	this->_type = name;
 }

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 22:18:41 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 17:37:15 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/03 17:43:33 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/04 13:52:23 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+// LEarn about containers library and vectors
 
-Zombie::Zombie(std::string name):_ZombieName(name) {}
+Zombie* zombieHorde(int N, std::string name) {
 
-Zombie::~Zombie() {
-	std::cout << "The Zombie " << this->_ZombieName << " was destroyed." << std::endl;
-}
+	Zombie	*myHorde = new (std::nothrow) Zombie[N];
+	if (!myHorde)\
+		return (NULL);
 
-void	Zombie::announce() {
-	std::cout << this->_ZombieName << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	for (int i = 1; i <= N; i++)
+	{
+		std::cout << i << ": ";
+		myHorde->setName(name);
+		myHorde->announce();
+	}
+	return (myHorde);
 }

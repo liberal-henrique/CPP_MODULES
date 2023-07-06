@@ -63,3 +63,9 @@ of the code without affecting other parts
 	Increased security of data.
 
 Inheritance
+
+
+Smart Pointers in C++
+	It is equal to a raw pointer, but he has the invocation of
+the destructor in himself.
+

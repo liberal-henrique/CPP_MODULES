@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:08:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/02 21:44:04 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/03 15:24:17 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,24 @@ bool	PhoneBook::ContactEmpty(int position) const {
 void	PhoneBook::SetCounterContact() {
 	if (this->counter_contact == 0 && ContactEmpty(counter_contact))
 		std::cout << "The list is empty." << std::endl;
-	if (this->counter_contact == 8)
+	if (!ContactEmpty(7))
 	{
-		std::cout << "Estou no SetCounterContact" << std::endl;
-		this->counter_contact--;
-		CleanItem(0);
-		std::cout << "testando" << std::endl;
-		TablePrint();
+		delete list[0];
 		for (int j = 0; j < 7; j++)
 			list[j] = list[j + 1];
+		list[7] = new Contact;
+		list[7]->SetFirst_Name("");
+		list[7]->SetLast_Name("");
+		list[7]->SetNickname("");
+		list[7]->SetPhone_Number("");
+		list[7]->SetDarkest_Secret("");
 	}
-	// if (!ContactEmpty(this->counter_contact))
-	// 	CleanItem(this->counter_contact);
+}
+
+void	PhoneBook::AddCounterContact() {
+	if (ContactEmpty(7))
+		this->counter_contact++;
+	std::cout << "Contact added" << std::endl;
 }
 
 void	PhoneBook::PrintList() {
@@ -68,12 +74,6 @@ void	PhoneBook::PrintList() {
 
 	while (i < 8 && i < this->counter_contact && list[i])
 		Print(i++);
-}
-
-void	PhoneBook::AddCounterContact() {
-	if (this->counter_contact < 8)
-		this->counter_contact++;
-	std::cout << "Contact added" << std::endl;
 }
 
 void	PhoneBook::Add() {
@@ -85,7 +85,6 @@ void	PhoneBook::Add() {
 	int	i = -1;
 
 	SetCounterContact();
-	std::cout << this->counter_contact << " Counter Contacts" << std::endl;
 	while (first_name.empty())
 	{
 		std::cout << "Write Your first Name: ";
@@ -129,8 +128,6 @@ void	PhoneBook::Add() {
 	nickname.clear();
 	phone.clear();
 	dark_secret.clear();
-	// Debug
-	// TablePrint();
 }
 
 void	PhoneBook::Print(int position) const {

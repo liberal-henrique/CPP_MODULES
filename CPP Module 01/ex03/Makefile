@@ -1,12 +1,12 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	Zombie
+NAME		=	Unnecessary_violence
 
-SRCS		=	Zombie.cpp \
-				Main.cpp \
-				randomChump.cpp \
-				newZombie.cpp \
+SRCS		=	Main.cpp \
+				HumanA.cpp \
+				HumanB.cpp \
+				Weapon.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 

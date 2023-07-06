@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 22:18:41 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 17:37:15 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/04 15:52:20 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/05 15:10:24 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+# ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-Zombie::Zombie(std::string name):_ZombieName(name) {}
+#include <ctype.h>
+#include <string>
+#include <iostream>
+#include <cstring>
+#include "Weapon.hpp"
 
-Zombie::~Zombie() {
-	std::cout << "The Zombie " << this->_ZombieName << " was destroyed." << std::endl;
-}
+class HumanA {
+	public:
+		HumanA(Weapon &object);
+		HumanA(const std::string &name, Weapon &object);
+		~HumanA();
+		void		attack();
+		void		setName(std::string name);
+		std::string	getName();
 
-void	Zombie::announce() {
-	std::cout << this->_ZombieName << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+	private:
+		std::string	_name;
+		Weapon *_weapon;
+};
+
+#endif
