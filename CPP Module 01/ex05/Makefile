@@ -4,6 +4,7 @@ RM			=	/bin/rm -f
 NAME		=	Harl
 
 SRCS		=	Main.cpp \
+				Harl.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 

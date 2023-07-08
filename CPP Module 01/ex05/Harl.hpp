@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:10:59 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/06 16:12:44 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/08 20:38:10 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,18 @@
 
 class Harl {
 	public:
-		void complain( std::string level );
+		Harl();
+		~Harl();
+		void complain( std::string level);
 	private:
-		void debug( void );
-		void info( void );
-		void warning( void );
-		void error( void );
-}
+		typedef void (Harl::*pnt_func)();
+		std::string	names[4];
+		pnt_func functions[4];
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+};
+	bool	check_level (std::string input);
 
 #endif

@@ -69,3 +69,19 @@ Smart Pointers in C++
 	It is equal to a raw pointer, but he has the invocation of
 the destructor in himself.
 
+What is Ad-hoc?
+	The term "ad hoc" in the context of programming refers to
+something that is created or done for a specific purpose or
+situation, without being part of a general rule or predefined
+structure. It implies a temporary or on-the-fly solution
+tailored to meet a specific need or requirement.
+
+What is it Ad-Hoc polymorphism?
+	Also known as function overloading or method overloading, is a
+feature in a programming language that allows multiple functions or
+method have the same name but with different kind and number of
+parameter. The appropriate function or method implementation is
+selected based on the types of arguments passed at compile-time.
+It allows the developers to use intuitive and consistent function
+or method names for operations with similar tasks but different types
+or with different variations in behavior.
