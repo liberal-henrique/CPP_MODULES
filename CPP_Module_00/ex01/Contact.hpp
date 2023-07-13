@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:40:21 by lliberal          #+#    #+#             */
-/*   Updated: 2023/06/28 15:18:03 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/11 18:00:34 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <ctype.h>
 #include <string>
+#include <stdlib.h> 
 #include <iostream>
 #include <cstring>
 

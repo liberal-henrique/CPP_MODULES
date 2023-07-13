@@ -6,73 +6,52 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:24:58 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/05 18:27:44 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/13 09:30:23 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	write_num(int num, int base)
-{
-	if (num > base)
-		write_num(num / base);
-	return (write(1, &"0123456789"[num % base], 1));
+int	put_nbr(int num) {
+	if (num > 9)
+		put_nbr(num / 10);
+	return (write(1, &"0123456789"[num % 10], 1));
 }
 
-int	ft_isspace(char c)
-{
-	return (c == 32 || (c >= 9 && c <= 13));
-}
+// void	swap_num(int my_arr[], int first, int second)
+// {
+// 	int	aux;
 
-int	ft_isdigit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
+// 	aux = my_arr[first];
+// 	my_arr[first] = my_arr[second];
+// 	my_arr[second] = aux;
+// }
 
-int	ft_atoi(char *s)
+int	main()
 {
-	int	res;
-	int	sign;
-	int	i;
+	int	my_arr[] = {65, 69, 69, 12, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+	int	size = sizeof(my_arr) / sizeof(my_arr[0]);
+	int	aux;
 
-	i = 0;
-	res = 0;
-	if (!s)
-		return (0);
-	while (ft_isspace(s[i]))
-		i++;
-	sign = (s[i] != '-') - (s[i] == '-');
-	i += (s[i] == '-' || s[i] == '+');
-	while (ft_isdigit(s[i]))
-	{
-		res = res * 10 + s[i] - '0';
-		i++;
+	for (int i = 0; i < size - 1; i++) {
+		for (int j = 0; j < size - 1; j++) {
+			if (my_arr[j + 1] < my_arr[j])
+			{
+				aux = my_arr[j + 1];
+				my_arr[j + 1] = my_arr[j];
+				my_arr[j] = aux;
+				i = 0;
+			}
+		}
+		if (my_arr[size - 1] == my_arr[size - 2]) {
+			size--;
+			i--;
+		}
 	}
-	return (res * sign);
-}
-
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-		return (1);
-	write_num(ft_atoi(av[1]));
-}
-
-bool	isValid(char *s)
-{
-	char	*open = "({[";
-
-	if (strchr(open, *s))
+	for (int i = 0; i < size - 1; i++)
 	{
-		isValid(*s + 1);
+		put_nbr(my_arr[i]);
+		write(1, "-", 1);
 	}
-	else
-	s++;
 }
-
-
-
-
-// {}()[]
-// {([])}
 

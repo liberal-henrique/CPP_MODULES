@@ -1,0 +1,56 @@
+Here are some key points to know about design patterns:
+
+	Types of Design Patterns: Design patterns are
+categorized into three main types:
+
+	Creational Patterns: These patterns focus on object creation
+mechanisms, such as creating objects in a controlled and flexible
+way. Examples include the Singleton, Factory Method, and Builder
+patterns.
+	Structural Patterns: These patterns deal with object
+composition and relationships between objects, providing
+ways to build complex structures from simpler ones.
+Examples include the Adapter, Decorator, and Composite
+patterns.
+	Behavioral Patterns: These patterns focus on communication
+and interaction between objects, defining how objects
+behave and collaborate. Examples include the Observer,
+Strategy, and Template Method patterns.
+
+
+Examples of Design Patterns:
+
+	Singleton Pattern: Ensures that a class has
+only one instance and provides global access to it.
+Useful when you need a single shared instance of a
+class, such as a database connection.
+
+	Observer Pattern: Defines a one-to-many dependency
+between objects, so that when one object changes
+its state, all dependent objects are notified
+and updated automatically. Used in event-driven
+systems or scenarios where objects need to be
+notified of changes.
+
+	Decorator Pattern: Allows adding new behaviors
+or functionalities to an object dynamically by
+wrapping it with other objects. Useful when you
+want to extend the functionality of an object
+without subclassing.
+
+	Factory Method Pattern: Provides an interface for
+creating objects, but lets subclasses decide which class
+to instantiate. Useful when you want to encapsulate
+object creation logic and provide flexibility in creating
+different types of objects.
+
+	Strategy Pattern: Defines a family of interchangeable
+algorithms and encapsulates each one, allowing them to
+be used interchangeably. Useful when you want to select
+an algorithm dynamically at runtime.
+
+	Remember that design patterns are not strict rules
+but rather guidelines to help you make informed design
+decisions. They provide a shared language and set of concepts
+that can facilitate communication and collaboration among
+software developers.

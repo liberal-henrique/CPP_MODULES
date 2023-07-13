@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:08:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 15:24:17 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:52:27 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,6 @@ std::string	PhoneBook::EditContent(std::string str) {
 void	PhoneBook::Search() {
 	std::string	input;
 	int	contact;
-	int	i = 0;
 
 	contact = -1;
 	TablePrint();

@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 15:06:31 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/11 18:00:39 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/11 10:51:37 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/12 15:48:44 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <ctype.h>
 #include <string>
-#include <stdlib.h> 
 #include <iostream>
 #include <cstring>
-#include "Contact.hpp"
+#include <cmath>
 
-class PhoneBook {
-	private:
-		Contact	*list[8];
-		int		counter_contact;
+class Fixed {
 
 	public:
-		PhoneBook();
-		// ~PhoneBook();
-		void	Add();
-		void	Search();
-		void	CleanItem(int position);
-		bool	ContactEmpty(int position) const;
-		void	Print(int position) const;
-		void	PrintList();
-		void	TablePrint();
-		std::string	EditContent(std::string str);
-		void	SetCounterContact();
-		void	AddCounterContact();
+		Fixed();
+		Fixed(const int param);
+		Fixed(const float num);
+		Fixed(const Fixed &copy);
+		~Fixed();
+		float	toFloat(void) const;
+		int		toInt(void) const;
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
+		Fixed &operator=(const Fixed &copy);
+
+	private:
+		int	to_store;
+		static int fractional;
+
 };
+	std::ostream &operator<<(std::ostream &content, const Fixed &copy);
 
 #endif

@@ -85,3 +85,38 @@ selected based on the types of arguments passed at compile-time.
 It allows the developers to use intuitive and consistent function
 or method names for operations with similar tasks but different types
 or with different variations in behavior.
+
+What is it a Orthodox Canonical class form?
+
+Understanding and Using Floating Point Numbers
+	Floating point numbers provide a kind of illusion; they look like
+"real" numbers, with decimals and possibly very large or small magnitudes.
+In reality, a 4-byte floating point number, for example, can actually hold
+fewer distinct values than a 4-byte integer.
+Bits representing an integer are interpreted literally as a binary number,
+while bits in a floating point number have a more complicated interpretation.
+
+Accuracy vs. Precision
+	"Accuracy" refers to how close a measurement is to the true value, whereas
+"precision" has to do with how much information you have about a quantity,
+how uniquely you have it pinned down.
+	Integer arithmetic enjoys the property of complete accuracy.
+	Floating point numbers are the exact opposite of integers with respect
+to accuracy and precision. They have good precision, since they never
+deliberately discard information representing your numbers. If you had
+enough bits, you could reverse any FP calculation to get the original
+number, just like how, with enough bits, you could represent an arbitrarily
+large integer. But floating point numbers have poor accuracy.
+
+What is fixed-point numbers?
+	Fixed-point numbers can be represented using various number formats,
+such as two's complement or sign-and-magnitude, depending on the application
+and desired range of values. The number of bits allocated to the integer and
+fractional parts determines the range and precision of the fixed-point number.
+	The choice between fixed-point and floating-point representation depends
+on the specific needs of the application. Fixed-point numbers offer determinism,
+predictable precision, and potentially lower computational complexity, but they
+have a limited dynamic range compared to floating-point numbers. It is essential
+to consider the range, precision requirements, and computational trade-offs when
+deciding whether to use fixed-point or floating-point representation for a given
+application.

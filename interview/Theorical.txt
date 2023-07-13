@@ -1,0 +1,160 @@
+Entrevista Pessoal
+
+	Fale-me um pouco sobre si.
+	Sou um profissional com 9 anos de experiencia na area juridica que
+esta em transicao de carreira para a area de tecnologia. Ja ha mais de um
+ano que estou a me capacitar na 42 Lisboa e tenho cada vez mais me encantado
+mais pela area de tecnologia. Termino um dia de estudo motivado e entusiasmado por
+imaginar o que poderei desenvolver no dia seguinte.
+	Antes de entrar na 42 eu nao tinha sabia nada sobre programacao. Portanto, minha
+primeira linguagem mesmo foi C e isso foi muito bom para minha perscepcao
+de como as coisas correm debaixo dos panos. Percebi que ao dar um passo atras
+podemos perceber como as coisas sao feitas, antes de tentar aprender a fazer algo funcionar,
+isso torna o processo de aprendizado um cado mais moroso mas compensa quando pensamos em toda a nossa
+trajetoria. Agora, acredito que a oportunidade de colaborar com uma equipa real, com problemas
+reais, com clientes reais e poder participar desse movimento seria fundamental para solidificar
+meus conhecimentos e materializar a razao pela qual varias topicos de estudos foram criados e
+sao usados. Na minha concepcao, isso eh a melhor forma de estimulo. Ao superar problemas reais
+entregamos valor a nossa equipa, sentimos que nossos conhecimentos mudaram para melhor nossa sociedade.
+
+Onde tu estas?
+Porque tu estas na tua posicao?
+Para onde tu pretendes ir?
+
+O que tu achas que deve ser um bom ambiente de trabalho??
+	Um espaco onde comunicacao eficiente possibilite a
+colaboracao e construcao de um espirito de equipa.
+	Quando os individuos sentem-se capazes de resolver qualquer problema.
+	Um espaco onde as pessoas sintam-se confortaveis por
+saberem que caso um problema exista ele sera comunicado
+da forma devida e que todos estao juntos na busca da solucao.
+A meu ver, a comunicacao proporcional um espaco de paz e liberdade.
+Caso, qualquer incidencia aconteca, os envolvidos vao apontuar suas angustias
+resolver suas diferencas e tudo seguira em frente de forma bastante produtiva.
+
+Pq eu escolhi a 42?
+	Na 42 antes de aprendermos a programar temos de aprender a saber colaborar e
+a sermos independentes. Por nao termos um professor como fonte da verdade, temos de
+buscar manuais, videos e explicacoes dos colegas para percerbermos nossas questoes.
+Toda as vezes que tenho de falar a respeito, lembro que, na verdade, sempre foi assim
+que eu aprendi. Com o professor eu tinha uma introducao sobre o assunto, uma especie de
+apanhado geral e depois eu precisava, junto de alguns amigos, ir em buscar de entender o
+assunto e desenvolver meus trabalhos. Ou seja, a 42 oferecesse o unico formato de ensino
+com o qual eu me adapto e que, realmente, acredite.
+
+Perguntaram se eu tinha projetos em equipa na 42 e como as coisas
+correram nessa experiencia?
+	Sim, eu desenvolvi o Minishell junto de um colega. Foi uma otima experiencia. Acredito
+que minha capacidade logica, disciplina e adaptabilidade aumentaram imenso nesse projeto. Contudo,
+aprendi tanto sobre codigo quanto sobre relacionamento interpessoal. Eu cometi uma falha de comunicao que
+custou bastante no percurso final para entrega do projeto.
+	Meu colega de projeto conseguiu um emprego logo no inicio do projeto. Isso inicialmente nao foi um problema,
+porem, a medida que ele teve de se dedicar mais ao trabalho, o tempo que ele dedicava ao projeto ja
+nao era o mesmo do inicial. Acabei por absorver algumas das responsabilidades dele. Ao inves,
+de renegociar todo o trabalho e buscar um novo equilobrio levei tudo sozinho. Eu sabia que ele tinha
+fortes razoes para nao estar la comigo. Portanto, preferi nao falar. Contudo, no fim do projeto, eu
+tambem ja estava no meu limite fisico.
+	Isso no ambiente profissional eh gravissimo pois, apos o termino de um projeto, teremos outro. Nao
+seria pratico se entregar um projeto metade de uma equipa fosse de baixa pois estavam adoecidos. Dessa forma,
+acredito que a comunicacao eh fundamental e um dever de cada colaborador.
+
+Por que eu quero trabalhar na Critical?
+	Pela filosofia praticada na Critical que percebi tanto por fora (como candidato a uma vaga) quanto por dentro (com
+meus colegas que ja estao a fazer parte da empresa).
+	Eh uma empresa que acredita nas pessoas e no futuro da nossa sociedade. Isso eh provado
+no meu proprio processo de selecao. Eu estou a aplicar para uma vaga de guru C++ wanna be. Portanto,
+a empresa oferece oportunidade para qualquer pessoa se candidatar a receber um salario enquanto se
+qualifica para, no futuro, entregar valor a equipa que ele for encaixada e, ainda, nessa etapa
+recebera mais investimento para uma qualificacao continuada. Como isso depende do futuro
+para que a empresa possa obter retorna isso, tambem, eh diretamente um investimento no futuro da nossa
+sociedade. Para realizar esse tipo de investimento eh preciso de um otimismo infinito.
+	Alem disso, tambem estamos a falar de uma empresa: em busca de pessoas apaixonadas por programacao,
+com evolucao de carreira baseada na contribuicao, interessada em desenvolver uma estrutura hierarquica plana,
+que valoriza o individuo para alem do profissional,
+
+
+
+Entrevista tecnica
+
+Qual a diferenca entre heap e stack memories?
+	Eh a area da memoria usada para para armazenar variaveis
+locais e informacoes de contexto durante a execucao de uma funcao.
+a alocacao e dealocacao eh realizada por rotinas do compilad
+
+O que eh um static member?
+	Eh um membro de uma classe que pertence a propria classe nao
+ao objeto instanciado dessa classe. Isso significa que varios objetos
+da classe compartilham o mesmo static member, ao inves de terem copias
+separadas de cada um.
+
+Quais sao os pilares da OOP?
+
+	Heranca permite a criacao de subclasses baseadas em uma
+classe existente. A subclasse herda atributos e metodos da
+superclasse. Isso da suporte para reusabilidade do codigo e
+promove a organizacao hierarquica do codigo.
+
+	Abstracao permite a simplificacao do codigo deixando visivel
+apenas o essencial e ocultando os detalhes menos importantes. Isso
+possibilita escalabilidade, modularizacao do codigo, e tambem promove
+a reutilizacao do codigo.
+
+	Polimorfismo faz referencia a habilidade de objetos de classes diferentes
+responderem a mesma mensagem de maneiras diferentes. Isso permite que
+objetos sejam tratados como instancia de sua classe base ou como instancias
+de suas classes derivadas. Polimorfismo eh alcancado por meio do overloading de funcoes
+e do overriding.
+		overloading permite que funcoes com o mesmo nome mas parametros
+	diferentes coexistam.
+		overriding permite que classes derivadas fornecam sua propria implementacao
+	de uma funcao virtual da classe base.
+
+	Encapsulamento agrupamento/empacotamento de dados com o mecanismos ou metodos
+que operam nesses dados. Tambem faz referencia ao limite de acesso direto para algumas
+informacoes. O Encapsulamento permite que os desenvolvedores apresentem uma interface
+consistente e utilizavel.
+
+Design Patterns sao solucoes utilizadas comumente
+para solucoes de problemas no desenvolvimento de
+software. Elas fornecem guidelines e boas praticas para
+problemas especificos de design, promovendo a manutenabilidade,
+escalabilidade, flexibilidade.
+Exemplo:
+	Singleton --> Garante que cada classe tera apenas uma instancia
+e ela sera acessada de qualquer parte do codigo.
+	Observer --> Estabelece um padrao de um para muitos objetos relacionados
+assim quando um objeto altera seu estado, os dependentes sao notificados e
+tambem atualizam.
+	Factory --> define uma interface para criar objetos, mas permite que as subclasses
+decidam qual classe instanciar.
+
+O que eh um objeto?
+	Eh uma entidade tangivel que representa uma instancia de uma classe. Isso
+combina dados (como atributos) e comportamento (como methodos) dentro de uma
+unidade.
+
+O que eh uma classe?
+	Eh um modelo ou um template que define uma estrutura e comportamento dos
+objetos. Ela encapsula os atributos e as funcoes que alteram que operam esses
+atributos.
+
+O que eh uma classe abstrata?
+	Eh uma classe pensada/desenhada para ser uma classe base. Ela nao pode ser
+instanciada e deve possuir ao menos um metodo virtual. Esse alem de receber
+o indicador virtual tambem eh inicializado com zero. Sao uteis para criacao
+de interfaces, definicao de comportamento, e criacao de hierarquia
+entre classes relacionadas.
+
+O que eh uma interface?
+	Toda interface eh uma classe abstrata mas nem toda classe abstrata eh uma
+interface. Elas definem um contrato sem provocar nenhum detalhe de implementacao.
+
+O que eh um template?
+	Eh um estrutura que recebe diferentes data types. Pode ser usado com diferentes
+funcoes com operacoes identicas.
+	Exitem functions templates: nos permitem definir uma funcao generica
+que pode operar diferentes tipos. E, tambem, as Classes templates uma classe
+generica que pode ser instanciada por diferentes tipos.
+
+
+
