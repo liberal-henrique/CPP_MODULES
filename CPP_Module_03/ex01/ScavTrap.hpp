@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:56:49 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/21 18:20:38 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/27 18:22:54 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #define SCAVTRAP_HPP
 
 #include <string>
-#include <ctype.h>
 #include <iostream>
-#include <cstring>
 #include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap {
+class ScavTrap : public ClapTrap {
 	public:
 			ScavTrap();
-			ScavTrap(std::string& Name);
+			ScavTrap(std::string Name);
 			ScavTrap(const ScavTrap& copy);
-			virtual	~ScavTrap();
-			void	guardGate();
+			~ScavTrap();
+			// void	guardGate();
+			ScavTrap& operator=(const ScavTrap& copy);
 			void	attack(const std::string& target);
 };
 

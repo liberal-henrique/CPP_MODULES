@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:31:58 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/21 18:21:50 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/27 17:58:12 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,26 @@ ClapTrap::ClapTrap(std::string Name) {
 	std::cout << "The constructor with name called." << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap &copy) {
+	*this->Name = copy.name;
+	*this->Attack = copy.Attack;
+	*this->HitPoints = copy.HitPoints;
+	*this->Energy = copy.Energy;
+	std::cout << "The constructor copy." << std::endl;
+}
+
+ClapTrap::&operator=(ClapTrap &copy) {
+	std::cout << "Copy assigment operator called" << std::endl;
+	if (this != &copy)
+	{
+		*this->Name = copy.name;
+		*this->Attack = copy.Attack;
+		*this->HitPoints = copy.HitPoints;
+		*this->Energy = copy.Energy;
+	}
+	return (*this);
+}
+
 ClapTrap::~ClapTrap() {
 	std::cout << this->getName() << " claptrap was destroyed." << std::endl;
 }
@@ -38,11 +58,11 @@ void	ClapTrap::attack(const std::string& target) {
 	{
 		this->Energy -= 1;
 		std::cout << this->getName()
-				  << " attacks " 
-				  << target 
-				  << ", causing " 
+				  << " attacks "
+				  << target
+				  << ", causing "
 				  << this->Attack
-				  << " points of damage!" 
+				  << " points of damage!"
 				  << std::endl;
 	}
 }
