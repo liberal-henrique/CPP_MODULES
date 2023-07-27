@@ -12,19 +12,12 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap() : HitPoints(10), Energy(10), Attack(0) {
 	std::cout << "The deafault constructor called." << std::endl;
-	this->Attack = 0;
-	this->HitPoints = 10;
-	this->Energy = 10;
 }
 
-ClapTrap::ClapTrap(std::string Name) {
-	this->setName(Name);
-	this->Attack = 0;
-	this->HitPoints = 10;
-	this->Energy = 10;
-	std::cout << "The constructor with name called." << std::endl;
+ClapTrap::ClapTrap(std::string& Name) : Name(Name), HitPoints(10), Energy(10), Attack(0) {
+	std::cout << this->getName() << " was created." << std::endl;
 }
 
 ClapTrap::~ClapTrap() {

@@ -10,28 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include <string>
+#include <ctype.h>
+#include <iostream>
+#include <cstring>
 #include "ClapTrap.hpp"
 
-int main(void) {
-	ClapTrap *A = new ClapTrap("Mario");
-	ClapTrap *B = new ClapTrap("Luigi");
+class ScavTrap : virtual public ClapTrap {
+	public:
+			ScavTrap();
+			ScavTrap(std::string& Name);
+			ScavTrap(const ScavTrap& copy);
+			virtual	~ScavTrap();
+			void	guardGate();
+			void	attack(const std::string& target);
+};
 
-	std::cout << A->getName() << std::endl;
-	std::cout << B->getName() << std::endl;
-
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	B->attack(A->getName());
-	B->beRapaired(2);
-	A->beRapaired(2);
-	A->getEnergy();
-	B->getEnergy();
-	delete(A);
-	delete(B);
-}
+#endif

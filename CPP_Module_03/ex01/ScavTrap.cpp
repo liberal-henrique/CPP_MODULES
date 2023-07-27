@@ -10,28 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(void) {
-	ClapTrap *A = new ClapTrap("Mario");
-	ClapTrap *B = new ClapTrap("Luigi");
+ScavTrap::ScavTrap(): ClapTrap() {
+}
 
-	std::cout << A->getName() << std::endl;
-	std::cout << B->getName() << std::endl;
+ScavTrap::ScavTrap(std::string& Name): ClapTrap(Name) {
+	this->Attack = 20;
+	this->Energy = 50;
+	this->HitPoints = 100;
+	std::cout << "" << std::endl;
+}
 
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	B->attack(A->getName());
-	B->beRapaired(2);
-	A->beRapaired(2);
-	A->getEnergy();
-	B->getEnergy();
-	delete(A);
-	delete(B);
+ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
+
 }
