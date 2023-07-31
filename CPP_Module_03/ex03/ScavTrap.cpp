@@ -14,7 +14,9 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap() {
-	std::cout << "The ScavTrap's deafault constructor was called." << std::endl;
+	std::cout 
+			<< "The ScavTrap's deafault constructor was called." 
+			<< std::endl;
 }
 
 ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
@@ -29,7 +31,9 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &copy) {
-	std::cout << "ScavTrap has a operator overload." << std::endl;
+	std::cout 
+			<< "ScavTrap has a operator overload." 
+			<< std::endl;
 	if (this != &copy) {
 		this->Name = copy.Name;
 		this->HitPoints = copy.HitPoints;
@@ -40,9 +44,12 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &copy) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
-	std::cout << "ScavTrap's copy constructor was called" << std::endl;
+	std::cout 
+			<< "ScavTrap's copy constructor was called" 
+			<< std::endl;
 	*this = copy;
 }
+
 void ScavTrap::attack(const std::string& target) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
 		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;

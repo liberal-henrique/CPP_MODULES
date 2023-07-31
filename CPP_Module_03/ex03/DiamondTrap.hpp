@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 16:56:49 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/27 18:33:57 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/21 14:31:58 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/27 18:20:50 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
+
+#include <string>
+#include <iostream>
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
+class DiamondTrap : public FragTrap, public ScavTrap {
+	public:
 
-int main(void) {
-	ScavTrap A = ScavTrap("Mario");
-	ScavTrap B = ScavTrap(A);
-	ScavTrap C = ScavTrap("Liberal");
+	private:
+			std::string name;
+};
 
-	B.guardGate();
-
-	C.attack(B.getName());
-	B.takeDamage(C.getDamegeAttack());
-
-	B.attack(C.getName());
-	C.takeDamage(B.getDamegeAttack());
-
-}
+#endif

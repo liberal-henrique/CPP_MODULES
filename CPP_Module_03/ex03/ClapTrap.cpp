@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : HitPoints(10), Energy(10), Attack(0) {
 }
 
 ClapTrap::ClapTrap(std::string Name) : Name(Name), HitPoints(10), Energy(10), Attack(0) {
-	std::cout << this->getName() << " was created." << std::endl;
+	std::cout << this->getName() << " claptrap was created." << std::endl;
 }
 
 ClapTrap::~ClapTrap() {

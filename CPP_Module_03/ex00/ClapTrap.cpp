@@ -27,22 +27,22 @@ ClapTrap::ClapTrap(std::string Name) {
 	std::cout << "The constructor with name called." << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap &copy) {
-	*this->Name = copy.name;
-	*this->Attack = copy.Attack;
-	*this->HitPoints = copy.HitPoints;
-	*this->Energy = copy.Energy;
+ClapTrap::ClapTrap(const ClapTrap &copy) {
+	this->Name = copy.Name;
+	this->Attack = copy.Attack;
+	this->HitPoints = copy.HitPoints;
+	this->Energy = copy.Energy;
 	std::cout << "The constructor copy." << std::endl;
 }
 
-ClapTrap::&operator=(ClapTrap &copy) {
+ClapTrap& ClapTrap::operator=(const ClapTrap &copy) {
 	std::cout << "Copy assigment operator called" << std::endl;
 	if (this != &copy)
 	{
-		*this->Name = copy.name;
-		*this->Attack = copy.Attack;
-		*this->HitPoints = copy.HitPoints;
-		*this->Energy = copy.Energy;
+		this->Name = copy.Name;
+		this->Attack = copy.Attack;
+		this->HitPoints = copy.HitPoints;
+		this->Energy = copy.Energy;
 	}
 	return (*this);
 }
@@ -82,7 +82,12 @@ void	ClapTrap::beRapaired(unsigned int amount) {
 	{
 		this->Energy -= 1;
 		this->HitPoints += amount;
-		std::cout << this->getName() << " repairs itself, it gets " << this->HitPoints << " hit points back." << std::endl;
+		std::cout 
+				<< this->getName() 
+				<< " repairs itself, it gets " 
+				<< this->HitPoints 
+				<< " hit points back." 
+				<< std::endl;
 	}
 }
 
@@ -103,7 +108,13 @@ void	ClapTrap::setHitPoints(unsigned int amount) {
 }
 
 int	ClapTrap::getEnergy(void) {
-	std::cout << this->getName() << " has " << this->Energy << " points of energy." << std::endl;
+	std::cout 
+			<< this->getName() 
+			<< " has " 
+			<< this->Energy 
+			<< " points of energy." 
+			<< std::endl;
+
 	return (this->Energy);
 }
 
