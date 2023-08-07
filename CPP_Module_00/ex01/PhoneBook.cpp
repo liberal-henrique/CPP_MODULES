@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:08:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 12:19:52 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 12:37:54 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	PhoneBook::Add() {
 }
 
 void	PhoneBook::Print(int position) const {
-	if (position > 8 || position < 1 || ContactEmpty(position))
+	if (position > 8 || position < 0 || ContactEmpty(position))
 		std::cout << "This contact don't exist." << std::endl;
 	else {
 		std::cout << "The first name: ";
@@ -134,7 +134,6 @@ void	PhoneBook::Print(int position) const {
 		std::cout << list[position].GetDarkest_Secret() << std::endl;
 		std::cout << "This is the contact..." << std::endl;
 	}
-
 }
 
 void	PhoneBook::TablePrint() {
