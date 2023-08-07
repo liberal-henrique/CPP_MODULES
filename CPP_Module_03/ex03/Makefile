@@ -1,13 +1,13 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	FragTrap
+NAME		=	DiamondTrap
 
 SRCS		=	Main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
 				FragTrap.cpp \
-				DiamondTrap.cpp 
+				DiamondTrap.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 

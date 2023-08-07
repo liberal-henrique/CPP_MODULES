@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:31:58 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/27 18:20:50 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:54:32 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@
 class FragTrap : virtual public ClapTrap {
 	public:
 			FragTrap();
-			FragTrap(std::string Name);
+			FragTrap(std::string name);
 			FragTrap(const FragTrap& copy);
-			~FragTrap();
+			virtual ~FragTrap();
 			FragTrap&	operator=(const FragTrap& copy);
 			void		highFivesGuys(void);
 			void		attack(const std::string& target);
-			int			getAttackDamage() const;
-
+			virtual int			getAttackDamage() const;
 };
 
 #endif

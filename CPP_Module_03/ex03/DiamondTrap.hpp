@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:31:58 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/27 18:20:50 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:59:26 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,18 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap {
 	public:
+			DiamondTrap();
+			DiamondTrap(const std::string& name);
+			DiamondTrap(const DiamondTrap& copy);
+			~DiamondTrap();
+			DiamondTrap& operator=(const DiamondTrap& copy);
+			void whoAmI();
+			std::string	getName(void);
+			void	attack(const std::string& target);
 
 	private:
 			std::string name;
+
 };
 
 #endif

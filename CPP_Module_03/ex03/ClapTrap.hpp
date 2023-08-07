@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 14:32:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/27 18:20:40 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:52:02 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class ClapTrap {
 	public:
 			ClapTrap();
-			ClapTrap(std::string Name);
+			ClapTrap(std::string name);
 			ClapTrap(const ClapTrap &copy);
 			void	attack(const std::string& target);
 			void	takeDamage(unsigned int amount);
@@ -33,7 +33,7 @@ class ClapTrap {
 			int			getDamageAttack() const;
 			void		setDamageAttack(int Attack);
 			ClapTrap&	operator=(const ClapTrap &copy);
-			~ClapTrap();
+			virtual ~ClapTrap();
 
 	protected:
 			std::string		name;
