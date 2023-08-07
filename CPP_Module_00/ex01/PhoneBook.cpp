@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:08:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 12:06:38 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 12:19:52 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,6 @@ void	PhoneBook::SetCounterContact() {
 	{
 		for (int j = 0; j < 7; j++)
 			list[j] = list[j + 1];
-		Contact list[7];
-		list[7].SetFirst_Name("");
-		list[7].SetLast_Name("");
-		list[7].SetNickname("");
-		list[7].SetPhone_Number("");
-		list[7].SetDarkest_Secret("");
 	}
 }
 
@@ -189,9 +183,7 @@ void	PhoneBook::Search() {
 		if (contact < 0)
 			break ;
 		if (contact < 8 && contact >= 0)
-		{
 			Print(contact);
-		}
 		else
 		{
 			std::cout << "Try again..." << std::endl;

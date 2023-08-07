@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:30:50 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 11:37:56 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 12:09:16 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(int ac, char **av)
 				catalog.Search();
 		}
 		if (command == "EXIT")
-			exit(0);
+			break ;
 		command = "";
 	}
 }
