@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 10:41:17 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/10 16:42:25 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 11:34:38 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ Contact::Contact(std::string first, std::string last, std::string nick, int phon
 }
 
 Contact::~Contact() {
-	first_name.clear();
-	last_name.clear();
-	nickname.clear();
-	phone_number.clear();
-	darkest_secret.clear();
+	std::cout << "The Contact's destructor was called." << std::endl;
 }
 
 std::string	Contact::GetFirst_Name() const {

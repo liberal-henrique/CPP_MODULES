@@ -6,28 +6,29 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:06:31 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/11 18:00:39 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 11:30:01 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include <ctype.h>
+#include <iomanip>
 #include <string>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 #include "Contact.hpp"
 
 class PhoneBook {
 	private:
-		Contact	*list[8];
+		Contact	list[8];
 		int		counter_contact;
 
 	public:
 		PhoneBook();
-		// ~PhoneBook();
+		~PhoneBook();
 		void	Add();
 		void	Search();
 		void	CleanItem(int position);
