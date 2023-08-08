@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 18:05:35 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/08 20:41:34 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:48:11 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ int	main() {
 	}
 	else
 		harl.complain(level);
-
 	return (0);
 }

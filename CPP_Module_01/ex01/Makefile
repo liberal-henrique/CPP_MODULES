@@ -9,8 +9,11 @@ SRCS		=	Zombie.cpp \
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-$(NAME): $(OBJS)
+$(NAME):
 		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 all:	$(NAME)
 

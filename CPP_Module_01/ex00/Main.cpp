@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:49:50 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/03 17:23:05 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:32:42 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(void) {
 		getline(std::cin, invocation);
 	}
 	Zombie	*New_Zombie = newZombie(invocation);
-	New_Zombie->announce();
 	delete New_Zombie;
 	return (0);
 }

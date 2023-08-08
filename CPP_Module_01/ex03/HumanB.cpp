@@ -6,15 +6,15 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 10:24:05 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/05 15:53:55 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:20:08 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(): _weapon(nullptr) {}
+HumanB::HumanB(): _weapon(NULL) {}
 
-HumanB::HumanB(const std::string &name) : _name(name), _weapon(nullptr) {
+HumanB::HumanB(const std::string &name) : _name(name), _weapon(NULL) {
 	std::cout << "Constructor defined with name." << std::endl;
 }
 
@@ -38,5 +38,6 @@ void	HumanB::setName(std::string name) {
 }
 
 void	HumanB::setWeapon(Weapon &object) {
+	std::cout << "The Weapon were setted." << std::endl;
 	this->_weapon = &object;
 }

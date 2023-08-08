@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:39 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/06 19:25:43 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 16:24:59 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	std::string file = av[1];
-	std::ifstream sourceFile(file, std::ifstream::in);
+	std::ifstream sourceFile(file.c_str(), std::ifstream::in);
 	if (!sourceFile) {
 		sourceFile.close();
 		std::cout << "Error opening file." << std::endl;
 		return (1);
 	}
-	std::ofstream destFile(file.append(".replace"), std::ofstream::trunc);
+	std::string destFileName = file + ".replace";
+	std::ofstream destFile(destFileName.c_str(), std::ofstream::trunc);
 	if (!destFile)
 	{
 		destFile.close();

@@ -3,14 +3,17 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
 NAME		=	Sed
 
-SRCS		=	Main.cpp \
+SRCS		=	Main.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
 all:	$(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):
 		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJS)

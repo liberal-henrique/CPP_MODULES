@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:10:56 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/08 20:38:50 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 16:31:08 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ Harl::Harl() {
 	functions[3] = &Harl::warning;
 }
 
-Harl::~Harl() {}
+Harl::~Harl() {
+	std::cout << "Harl's Destructor called." << std::endl;
+}
 
 void Harl::complain( std::string level) {
 	for (int i = 0; i < 4; i++)

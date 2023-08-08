@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:51:59 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/05 14:40:59 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:16:50 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Weapon {
 		Weapon();
 		Weapon(const std::string &kind);
 		~Weapon();
-		const std::string	&getType(void);
-		void		setType(std::string name);
+		const std::string&	getType(void);
+		void				setType(std::string name);
 
 	private:
 		std::string _type;
