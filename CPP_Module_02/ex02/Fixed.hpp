@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:01:09 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/17 21:55:43 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:31:37 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <cmath>
 
 class Fixed {
-
 	public:
 		Fixed();
 		Fixed(const int param);
@@ -31,13 +30,13 @@ class Fixed {
 		int		toInt(void) const;
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-		
+
 		Fixed &operator=(const Fixed &copy);
 
-		static Fixed& function_min(Fixed &element1, Fixed &element2);
-		static Fixed& function_min(const Fixed &element1, const Fixed &element2);
-		static Fixed& function_max(Fixed &element1, Fixed &element2);
-		static Fixed& function_max(const Fixed &element1, const Fixed &element2);
+		static Fixed& min(Fixed &element1, Fixed &element2);
+		const static Fixed& min(const Fixed &element1, const Fixed &element2);
+		static Fixed& max(Fixed &element1, Fixed &element2);
+		const static Fixed& max(const Fixed &element1, const Fixed &element2);
 
 		bool operator>(const Fixed &fixed);
 		bool operator<(const Fixed &fixed);
@@ -46,14 +45,14 @@ class Fixed {
 		bool operator==(const Fixed &fixed);
 		bool operator!=(const Fixed &fixed);
 
-		Fixed &operator+(const Fixed &fixed);
-		Fixed &operator-(const Fixed &fixed);
-		Fixed &operator*(const Fixed &fixed);
-		Fixed &operator/(const Fixed &fixed);
+		Fixed operator+(const Fixed &fixed) const;
+		Fixed operator-(const Fixed &fixed);
+		Fixed operator*(const Fixed &fixed);
+		Fixed operator/(const Fixed &fixed);
 
-		Fixed &operator++();// pre-increment
+		Fixed& operator++();// pre-increment
 		Fixed operator++(int); // post-decrement
-		Fixed &operator--(); //pre-decrement
+		Fixed& operator--(); //pre-decrement
 		Fixed operator--(int);
 
 	private:

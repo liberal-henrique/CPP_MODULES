@@ -6,12 +6,15 @@ NAME		=	Fixed
 SRCS		=	Main.cpp \
 				Fixed.cpp \
 
-# OBJS		=	$(SRCS:.cpp=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
 all:	$(NAME)
 
 $(NAME):
-		$(CC) $(CFLAGS) $(SRCS)
+		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 fclean: clean
 		$(RM) $(NAME)

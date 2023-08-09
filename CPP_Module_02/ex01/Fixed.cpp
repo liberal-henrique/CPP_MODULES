@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 10:51:40 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/17 17:24:10 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:04:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed::~Fixed() {
 }
 
 float	Fixed::toFloat(void) const {
-	return (float)this->getRawBits() / (1 << this->fractional);
+	return ((float)this->getRawBits() / (1 << this->fractional));
 }
 
 int		Fixed::toInt(void) const {
@@ -61,6 +61,7 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 std::ostream& operator<<(std::ostream &content, const Fixed &fixed) {
+	// std::cout << "The operator << was used." << std::endl;
 	content << fixed.toFloat();
 	return (content);
 }

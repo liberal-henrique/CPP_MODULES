@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 10:51:37 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/11 13:26:03 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:22:02 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 class Fixed {
 	public:
 		Fixed();
+		~Fixed();
 		Fixed(Fixed &copy);
 		Fixed &operator=(const Fixed &copy);
-		~Fixed();
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 

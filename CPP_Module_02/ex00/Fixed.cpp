@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 10:51:40 by lliberal          #+#    #+#             */
-/*   Updated: 2023/07/11 18:27:22 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 19:20:37 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Fixed &Fixed::operator=(const Fixed &copy) {
 	std::cout << "Copy assigment operator called" << std::endl;
 	if (this != &copy)
 		this->setRawBits(copy.getRawBits());
-
 	return (*this);
 }
 

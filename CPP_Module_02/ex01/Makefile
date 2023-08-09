@@ -1,6 +1,6 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
-RM			=	rm -f
+RM			=	/bin/rm -f
 NAME		=	Fixed
 
 SRCS		=	Main.cpp \
@@ -10,11 +10,12 @@ OBJS		=	$(SRCS:%.cpp=%.o)
 
 all:	$(NAME)
 
+$(NAME):
+		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+
 %.o: %.cpp
 	$(CC) $(CCFLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		$(RM) $(OBJS)
