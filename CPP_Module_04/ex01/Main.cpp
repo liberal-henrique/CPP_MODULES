@@ -5,36 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 15:30:50 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 15:00:04 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/11 12:45:28 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-int main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-	PhoneBook catalog;
-	std::string	command;
+int main(int ac, char **av) {
+    (void)ac;
+    (void)av;
 
-	while (1)
-	{
-		std::cout << "Enter a command: ";
-		std::getline(std::cin, command);
-		for (int i = 0; i < (int)command.length(); i++)
-			command[i] = std::toupper(command[i]);
-		if (command == "ADD")
-			catalog.Add();
-		if (command == "SEARCH")
-		{
-			if (!command.empty())
-				catalog.Search();
-			command.clear();
-		}
-		if (command == "EXIT")
-			break ;
-		command.clear();
-	}
+    const Animal* meta = new Animal();
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound();
+    j->makeSound();
+    meta->makeSound();
+
+    delete meta;
+    delete j;
+    delete i;
+    return 0;
 }
+
+

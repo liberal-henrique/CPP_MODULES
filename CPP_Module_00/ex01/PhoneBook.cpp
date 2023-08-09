@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:08:02 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 12:37:54 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 14:56:02 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,8 +170,9 @@ void	PhoneBook::Search() {
 	TablePrint();
 	while (contact == -1)
 	{
-		std::cout << "Enter the desired contact: | (negatives to NOP)";
-		std::cin >> input;
+		std::cout << "Enter the desired contact: | (anything else to get out())";
+		std::getline(std::cin, input);
+		// std::cin >> input;
 		for (size_t i = 0; i < input.length(); i++)
 		{
 			if (!isdigit(input[i]))
@@ -188,5 +189,6 @@ void	PhoneBook::Search() {
 			std::cout << "Try again..." << std::endl;
 			break ;
 		}
+
 	}
 }

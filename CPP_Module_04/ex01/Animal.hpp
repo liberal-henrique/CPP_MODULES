@@ -5,36 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 15:30:50 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 15:00:04 by lliberal         ###   ########.fr       */
+/*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
+/*   Updated: 2023/07/11 12:45:28 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-	PhoneBook catalog;
-	std::string	command;
+#include <string>
+#include <iostream>
+#include <cstring>
 
-	while (1)
-	{
-		std::cout << "Enter a command: ";
-		std::getline(std::cin, command);
-		for (int i = 0; i < (int)command.length(); i++)
-			command[i] = std::toupper(command[i]);
-		if (command == "ADD")
-			catalog.Add();
-		if (command == "SEARCH")
-		{
-			if (!command.empty())
-				catalog.Search();
-			command.clear();
-		}
-		if (command == "EXIT")
-			break ;
-		command.clear();
-	}
-}
+class Animal {
+    public: 
+            Animal();
+            Animal(const Animal& copy);
+            virtual ~Animal();
+            Animal& operator=(const Animal& copy);
+            virtual void makeSound(void) const;
+            std::string getType(void) const;
+    protected: 
+            std::string type;
+};
+
+#endif
+

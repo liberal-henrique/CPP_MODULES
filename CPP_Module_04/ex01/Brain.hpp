@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 11:25:20 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 14:48:09 by lliberal         ###   ########.fr       */
+/*   Created: 2023/08/07 17:36:44 by lliberal          #+#    #+#             */
+/*   Updated: 2023/08/07 17:41:55 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctype.h>
-#include <string>
-#include <cstring>
-using namespace std;
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
-	for (int j = 1; av[j]; j++)
-	{
-		for (size_t i = 0; i < strlen(av[j]); i++)
-			cout << (char)toupper(av[j][i]);
-	}
-	cout << endl;
-	return (0);
-}
+#include <string>
+#include <iostream>
+#include <cstring>
+
+class Brain {
+	public:
+			Brain();
+			Brain(const Brain& copy);
+			~Brain();
+			Brain& operator=(const Brain& copy);
+			std::string ideas[100];
+};
+
+#endif

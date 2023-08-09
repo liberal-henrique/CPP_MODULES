@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 11:25:20 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 14:48:09 by lliberal         ###   ########.fr       */
+/*   Created: 2023/08/07 17:43:09 by lliberal          #+#    #+#             */
+/*   Updated: 2023/08/07 17:45:09 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ctype.h>
-#include <string>
-#include <cstring>
-using namespace std;
+#include "Brain.hpp"
 
-int	main(int ac, char **av)
-{
-	if (ac < 2)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
-	for (int j = 1; av[j]; j++)
-	{
-		for (size_t i = 0; i < strlen(av[j]); i++)
-			cout << (char)toupper(av[j][i]);
-	}
-	cout << endl;
-	return (0);
+Brain::Brain() {
+	
+}
+
+Brain::Brain(const Brain& copy) {
+}
+
+Brain::~Brain() {
+}
+
+Brain& Brain::operator=(const Brain& copy) {
+
 }

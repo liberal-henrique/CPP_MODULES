@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:06:31 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 11:30:01 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 15:02:02 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #include <string>
 #include <stdlib.h>
 #include <iostream>
-#include <cstring>
-#include <cstdlib>
+
 #include "Contact.hpp"
 
 class PhoneBook {
