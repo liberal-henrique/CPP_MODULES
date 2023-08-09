@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:00:50 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/09 19:10:25 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:23:35 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed() : to_store(0) {
 	// std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int param) : to_store(0) {
+Fixed::Fixed(const int param) {
 	this->setRawBits(param << fractional);
 }
 
@@ -123,22 +123,16 @@ Fixed Fixed::operator+(const Fixed &fixed) const {
 	return Fixed(this->toFloat() + fixed.toFloat());
 }
 
-Fixed Fixed::operator-(const Fixed &fixed) {
-	Fixed result;
-	result.setRawBits(fixed.getRawBits() - fixed.getRawBits());
-	return (result);
+Fixed Fixed::operator-(const Fixed &fixed) const {
+	return Fixed(this->toFloat() - fixed.toFloat());
 }
 
-Fixed Fixed::operator*(const Fixed &fixed) {
-	Fixed result;
-	result.setRawBits(fixed.getRawBits() * fixed.getRawBits());
-	return (result);
+Fixed Fixed::operator*(const Fixed &fixed) const {
+	return Fixed(this->toFloat() * fixed.toFloat());
 }
 
-Fixed Fixed::operator/(const Fixed &fixed) {
-	Fixed result;
-	result.setRawBits(fixed.getRawBits() / fixed.getRawBits());
-	return (result);
+Fixed Fixed::operator/(const Fixed &fixed) const {
+	return Fixed(this->toFloat() / fixed.toFloat());
 }
 
 // pre-increment

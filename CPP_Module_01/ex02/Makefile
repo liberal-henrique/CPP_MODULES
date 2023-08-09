@@ -5,7 +5,7 @@ NAME		=	Zombie
 
 SRCS		=	Main.cpp \
 
-OBJS		=	$(SRCS:.cpp=.o)
+OBJS		=	$(SRCS:%.cpp=%.o)
 
 all:	$(NAME)
 

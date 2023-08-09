@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:01:09 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/09 19:31:37 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 20:23:27 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ class Fixed {
 		bool operator!=(const Fixed &fixed);
 
 		Fixed operator+(const Fixed &fixed) const;
-		Fixed operator-(const Fixed &fixed);
-		Fixed operator*(const Fixed &fixed);
-		Fixed operator/(const Fixed &fixed);
+		Fixed operator-(const Fixed &fixed) const;
+		Fixed operator*(const Fixed &fixed) const;
+		Fixed operator/(const Fixed &fixed) const;
 
 		Fixed& operator++();// pre-increment
 		Fixed operator++(int); // post-decrement
