@@ -25,8 +25,6 @@ class FragTrap : virtual public ClapTrap {
 			virtual ~FragTrap();
 			FragTrap&	operator=(const FragTrap& copy);
 			void		highFivesGuys(void);
-			void		attack(const std::string& target);
-			virtual int			getAttackDamage() const;
 };
 
 #endif

@@ -17,6 +17,7 @@
 #include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 
 class DiamondTrap : public FragTrap, public ScavTrap {
 	public:
@@ -27,10 +28,13 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 			DiamondTrap& operator=(const DiamondTrap& copy);
 			void whoAmI();
 			std::string	getName(void);
-			void	attack(const std::string& target);
+			// void	attack(const std::string& target);
 
 	private:
 			std::string name;
+			using FragTrap::HitPoints;
+			using FragTrap::Attack;
+			using ScavTrap::Energy;
 
 };
 

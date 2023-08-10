@@ -14,9 +14,7 @@
 #define CLAPTRAP_HPP
 
 #include <string>
-// #include <ctype.h>
 #include <iostream>
-// #include <cstring>
 
 class ClapTrap {
 	public:

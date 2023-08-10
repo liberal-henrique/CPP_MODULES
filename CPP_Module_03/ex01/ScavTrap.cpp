@@ -14,14 +14,22 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap() {
-	std::cout << "The ScavTrap's deafault constructor was called." << std::endl;
-}
-
-ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
+	std::cout << "The ScavTrap's default constructor was called." << std::endl;
 	this->Attack = 20;
 	this->Energy = 50;
 	this->HitPoints = 100;
+}
+
+ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
 	std::cout << "ScavTrap is alive!" << std::endl;
+	this->Attack = 20;
+	this->Energy = 50;
+	this->HitPoints = 100;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
+	std::cout << "ScavTrap's copy constructor was called" << std::endl;
+	*this = copy;
 }
 
 ScavTrap::~ScavTrap() {
@@ -39,33 +47,24 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &copy) {
 	return (*this);
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
-	std::cout << "ScavTrap's copy constructor was called" << std::endl;
-	*this = copy;
-}
 void ScavTrap::attack(const std::string& target) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
+	{
+		std::cout 
+				<< "ScavTrap has no Hit points or energy anymore." 
+				<< std::endl;
+	}
 	else
 	{
 		this->Energy--;
 		std::cout 
-					<< this->getName() 
-					<< " attacks " 
+					<< "ScavTrap attacks " 
 					<< target 
 					<< ", causing "
 					<< this->getDamegeAttack()
 					<< " points of damage."
 					<< std::endl;
 	}
-}
-
-std::string ScavTrap::getName() {
-	return (this->Name);
-}
-
-int ScavTrap::getDamegeAttack() const {
-	return (this->Attack);
 }
 
 void	ScavTrap::guardGate() {

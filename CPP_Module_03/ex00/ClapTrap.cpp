@@ -20,11 +20,11 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(std::string Name) {
-	this->setName(Name);
+	std::cout << "The constructor with name called." << std::endl;
+	this->Name = Name;
 	this->Attack = 0;
 	this->HitPoints = 10;
 	this->Energy = 10;
-	std::cout << "The constructor with name called." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
@@ -75,8 +75,8 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 }
 
-void	ClapTrap::beRapaired(unsigned int amount) {
-	if (this->HitPoints <= 0 || this->Energy <= 0)
+void	ClapTrap::beRepaired(unsigned int amount) {
+	if (this->HitPoints <= 0 || this->Energy)
 		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
 	else
 	{

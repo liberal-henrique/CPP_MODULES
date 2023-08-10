@@ -14,21 +14,19 @@
 
 ClapTrap::ClapTrap() : HitPoints(10), Energy(10), Attack(0) {
 	std::cout
-			<< "The deafault constructor called."
+			<< "ClapTrap deafault constructor called."
 			<< std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), HitPoints(10), Energy(10), Attack(0) {
 	std::cout
-			<< this->getName()
-			<< " claptrap was created."
+			<< "Claptrap was created."
 			<< std::endl;
 }
 
 ClapTrap::~ClapTrap() {
 	std::cout
-			<< this->getName()
-			<< " claptrap was destroyed."
+			<< "Claptrap was destroyed."
 			<< std::endl;
 }
 
@@ -56,14 +54,12 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &copy) {
 void	ClapTrap::attack(const std::string& target) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
 		std::cout
-				<< this->getName()
-				<< " has no Hit points or energy anymore."
+				<< "ClapTrap has no Hit points or energy anymore."
 				<< std::endl;
 	else
 	{
 		this->Energy -= 1;
-		std::cout << this->getName()
-				  << " attacks "
+		std::cout << "ClapTrap attacks "
 				  << target
 				  << ", causing "
 				  << this->Attack

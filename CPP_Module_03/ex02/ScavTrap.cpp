@@ -17,13 +17,18 @@ ScavTrap::ScavTrap(): ClapTrap() {
 	std::cout 
 			<< "The ScavTrap's deafault constructor was called." 
 			<< std::endl;
-}
-
-ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
 	this->Attack = 20;
 	this->Energy = 50;
 	this->HitPoints = 100;
-	std::cout << "ScavTrap is alive!" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
+	std::cout 
+			<< "ScavTrap is alive!" 
+			<< std::endl;
+	this->Attack = 20;
+	this->Energy = 50;
+	this->HitPoints = 100;
 }
 
 ScavTrap::~ScavTrap() {
@@ -52,29 +57,26 @@ ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
 
 void ScavTrap::attack(const std::string& target) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
+	{
+		std::cout 
+				<< "ScavTrap has no Hit points or energy anymore." 
+				<< std::endl;
+	}
 	else
 	{
 		this->Energy--;
 		std::cout 
-					<< this->getName() 
-					<< " attacks " 
+					<< "ScavTrap attacks " 
 					<< target 
 					<< ", causing "
-					<< this->getDamegeAttack()
+					<< getDamageAttack()
 					<< " points of damage."
 					<< std::endl;
 	}
 }
 
-std::string ScavTrap::getName() {
-	return (this->Name);
-}
-
-int ScavTrap::getDamegeAttack() const {
-	return (this->Attack);
-}
-
 void	ScavTrap::guardGate() {
-	std::cout << this->getName() << " is now in gate keeper mode." << std::endl;
+	std::cout 
+			<< "ScavTrap is now in gate keeper mode." 
+			<< std::endl;
 }

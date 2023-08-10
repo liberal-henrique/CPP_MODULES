@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:15:24 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/09 16:59:11 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:08:16 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(void) {
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
+	std::cout << "my own test" << std::endl;
 	std::cout << "test is " << test.toFloat() << " as a float" << std::endl;
 	std::cout << "Test is " << test << std::endl;
 

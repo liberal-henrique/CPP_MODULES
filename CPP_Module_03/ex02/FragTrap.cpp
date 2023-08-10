@@ -14,17 +14,20 @@
 
 FragTrap::FragTrap() {
 	std::cout 
-		<< "The FragTrap's deafault constructor was called."
-		<< std::endl;
-}
-
-FragTrap::FragTrap(std::string Name) : ClapTrap(Name) {
+			<< "The FragTrap's deafault constructor was called."
+			<< std::endl;
 	this->Attack = 30;
 	this->Energy = 100;
 	this->HitPoints = 100;
+}
+
+FragTrap::FragTrap(std::string Name) : ClapTrap(Name) {
 	std::cout 
-			<< "FragTrap is alive!" 
+			<< "FragTrap was created by the Constructor with a name!" 
 			<< std::endl;
+	this->Attack = 30;
+	this->Energy = 100;
+	this->HitPoints = 100;
 }
 FragTrap::FragTrap(const FragTrap& copy) {
 	std::cout 
@@ -37,23 +40,6 @@ FragTrap::~FragTrap() {
 	std::cout 
 			<< "FragTrap is already destroyed!" 
 			<< std::endl;
-}
-
-void FragTrap::attack(const std::string& target) {
-	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
-	else
-	{
-		this->Energy--;
-		std::cout 
-					<< this->getName() 
-					<< " attacks " 
-					<< target 
-					<< ", causing "
-					<< this->getAttackDamage()
-					<< " points of damage."
-					<< std::endl;
-	}
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& copy) {
@@ -70,12 +56,8 @@ FragTrap&	FragTrap::operator=(const FragTrap& copy) {
 	return (*this);
 }
 
-int	FragTrap::getAttackDamage() const {
-	return (this->Attack);
-}
-
 void FragTrap::highFivesGuys(void) {
 	std::cout 
-			<< "Hi five Guys!!"
+			<< "Let's celebrate with a high-five!"
 			<< std::endl;
 }

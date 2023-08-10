@@ -10,21 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+
 #include "ScavTrap.hpp"
 
 
 int main(void) {
-	ScavTrap A = ScavTrap("Mario");
-	ScavTrap B = ScavTrap(A);
-	ScavTrap C = ScavTrap("Liberal");
+	ScavTrap *A = new ScavTrap("Mario");
+	ScavTrap C("Liberal");
 
-	B.guardGate();
+	ClapTrap D("Dog");
+	std::cout << D.getName() << " is here." << std::endl;
 
-	C.attack(B.getName());
-	B.takeDamage(C.getDamegeAttack());
+	D.Attack()
+	C.guardGate();
 
-	B.attack(C.getName());
-	C.takeDamage(B.getDamegeAttack());
+	A->attack(C.getName());
+	C.takeDamage(A->getDamageAttack());
 
+	C.attack(A->getName());
+	A->takeDamage(C.getDamageAttack());
+	delete A;
 }

@@ -13,25 +13,23 @@
 #include "ClapTrap.hpp"
 
 int main(void) {
-	ClapTrap *A = new ClapTrap("Mario");
-	ClapTrap *B = new ClapTrap("Luigi");
+	ClapTrap A = ClapTrap("Mario");
+	ClapTrap B = ClapTrap("Luigi");
 
-	std::cout << A->getName() << std::endl;
-	std::cout << B->getName() << std::endl;
+	std::cout << A.getName() << std::endl;
+	std::cout << B.getName() << std::endl;
 
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	A->attack(B->getName());
-	B->takeDamage(A->getDamageAttack());
-	B->attack(A->getName());
-	B->beRapaired(2);
-	A->beRapaired(2);
-	A->getEnergy();
-	B->getEnergy();
-	delete(A);
-	delete(B);
+	A.attack(B.getName());
+	B.takeDamage(A.getDamageAttack());
+	A.attack(B.getName());
+	B.takeDamage(A.getDamageAttack());
+	A.attack(B.getName());
+	B.takeDamage(A.getDamageAttack());
+	A.attack(B.getName());
+	B.takeDamage(A.getDamageAttack());
+	B.attack(A.getName());
+	B.beRepaired(2);
+	A.beRepaired(2);
+	A.getEnergy();
+	B.getEnergy();
 }

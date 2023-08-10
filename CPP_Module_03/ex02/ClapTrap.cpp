@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : HitPoints(10), Energy(10), Attack(0) {
 }
 
 ClapTrap::ClapTrap(std::string Name) : Name(Name), HitPoints(10), Energy(10), Attack(0) {
-	std::cout << this->getName() << " claptrap was created." << std::endl;
+	std::cout << this->getName() << " was created by the constructor of Claptrap." << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -47,12 +47,12 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &copy) {
 
 void	ClapTrap::attack(const std::string& target) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
+		std::cout << "ClapTrap has no Hit points or energy anymore." << std::endl;
 	else
 	{
 		this->Energy -= 1;
-		std::cout << this->getName()
-				  << " attacks "
+		std::cout 
+				  << "ClapTrap attacks "
 				  << target
 				  << ", causing "
 				  << this->Attack
@@ -65,24 +65,35 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	if (this->HitPoints > 0)
 	{
 		this->HitPoints -= amount;
-		std::cout << this->getName() << " were attacked now " << this->HitPoints << " hit points total." << std::endl;
+		std::cout 
+				<< "ClapTrap were attacked now " 
+				<< this->HitPoints 
+				<< " hit points total." 
+				<< std::endl;
 	}
 	else
 		std::cout 
-				<< this->getName() 
-				<< " were attacked now, but it's already dead " 
+				<< "ClapTrap were attacked now, but it's already dead " 
 				<< std::endl;
 
 }
 
 void	ClapTrap::beRapaired(unsigned int amount) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout << this->getName() << " has no Hit points or energy anymore." << std::endl;
+	{
+		std::cout 
+				<< "ClapTrap has no Hit points or energy anymore." 
+				<< std::endl;
+	}
 	else
 	{
 		this->Energy -= 1;
 		this->HitPoints += amount;
-		std::cout << this->getName() << " repairs itself, it gets " << this->HitPoints << " hit points back." << std::endl;
+		std::cout 
+				<< "ClapTrap repairs itself, it gets " 
+				<< this->HitPoints 
+				<< " hit points back." 
+				<< std::endl;
 	}
 }
 
@@ -103,7 +114,7 @@ void	ClapTrap::setHitPoints(unsigned int amount) {
 }
 
 int	ClapTrap::getEnergy(void) {
-	std::cout << this->getName() << " has " << this->Energy << " points of energy." << std::endl;
+	std::cout << "ClapTrap has " << this->Energy << " points of energy." << std::endl;
 	return (this->Energy);
 }
 

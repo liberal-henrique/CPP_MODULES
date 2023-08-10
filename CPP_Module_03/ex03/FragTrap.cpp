@@ -13,6 +13,9 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
+	this->Attack = 30;
+	this->Energy = 100;
+	this->HitPoints = 100;
 	std::cout
 		<< "The FragTrap's deafault constructor was called."
 		<< std::endl;
@@ -39,26 +42,6 @@ FragTrap::~FragTrap() {
 			<< std::endl;
 }
 
-void FragTrap::attack(const std::string& target) {
-	if (this->HitPoints <= 0 || this->Energy <= 0)
-		std::cout
-				<< this->getName()
-				<< " has no Hit points or energy anymore."
-				<< std::endl;
-	else
-	{
-		this->Energy--;
-		std::cout
-					<< this->getName()
-					<< " attacks "
-					<< target
-					<< ", causing "
-					<< this->getAttackDamage()
-					<< " points of damage."
-					<< std::endl;
-	}
-}
-
 FragTrap&	FragTrap::operator=(const FragTrap& copy) {
 	std::cout
 			<< "FragTrap has a operator overload."
@@ -73,12 +56,8 @@ FragTrap&	FragTrap::operator=(const FragTrap& copy) {
 	return (*this);
 }
 
-int	FragTrap::getAttackDamage() const {
-	return (this->Attack);
-}
-
 void FragTrap::highFivesGuys(void) {
 	std::cout
-			<< "Hi five Guys!!"
+			<< "Let's celebrate with a high-five!"
 			<< std::endl;
 }

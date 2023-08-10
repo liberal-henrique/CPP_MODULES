@@ -12,13 +12,15 @@
 
 #include "FragTrap.hpp"
 
-int main(int ac, char **av) {
-	(void)ac;
-	(void)av;
+int main(void) {
 
 	FragTrap *a = new FragTrap("Rita");
+	ScavTrap B("Donald");
 
 	a->highFivesGuys();
+
+	a->attack(B.getName());
+	B.takeDamage(a->getDamageAttack());
 
 	delete (a);
 }
