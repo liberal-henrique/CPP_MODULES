@@ -14,14 +14,18 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap() {
-	std::cout << "The ScavTrap's default constructor was called." << std::endl;
+	std::cout 
+			<< "The ScavTrap's default constructor was called." 
+			<< std::endl;
 	this->Attack = 20;
 	this->Energy = 50;
 	this->HitPoints = 100;
 }
 
 ScavTrap::ScavTrap(std::string Name): ClapTrap(Name) {
-	std::cout << "ScavTrap is alive!" << std::endl;
+	std::cout 
+			<< "ScavTrap is alive!" 
+			<< std::endl;
 	this->Attack = 20;
 	this->Energy = 50;
 	this->HitPoints = 100;
@@ -33,11 +37,15 @@ ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap() {
 }
 
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap is dying!" << std::endl;
+	std::cout 
+			<< "ScavTrap is dying!" 
+			<< std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &copy) {
-	std::cout << "ScavTrap has a operator overload." << std::endl;
+	std::cout 
+			<< "ScavTrap has a operator overload." 
+			<< std::endl;
 	if (this != &copy) {
 		this->Name = copy.Name;
 		this->HitPoints = copy.HitPoints;
@@ -61,12 +69,14 @@ void ScavTrap::attack(const std::string& target) {
 					<< "ScavTrap attacks " 
 					<< target 
 					<< ", causing "
-					<< this->getDamegeAttack()
+					<< getDamageAttack()
 					<< " points of damage."
 					<< std::endl;
 	}
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << this->getName() << " is now in gate keeper mode." << std::endl;
+	std::cout 
+			<< "ScavTrap is now in gate keeper mode." 
+			<< std::endl;
 }

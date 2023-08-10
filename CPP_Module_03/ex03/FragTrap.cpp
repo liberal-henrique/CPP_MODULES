@@ -13,21 +13,21 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
+	std::cout
+		<< "FragTrap's deafault constructor was called."
+		<< std::endl;
 	this->Attack = 30;
 	this->Energy = 100;
 	this->HitPoints = 100;
-	std::cout
-		<< "The FragTrap's deafault constructor was called."
-		<< std::endl;
 }
 
 FragTrap::FragTrap(std::string Name) : ClapTrap(Name) {
-	this->Attack = 30;
-	this->Energy = 100;
-	this->HitPoints = 100;
 	std::cout
 			<< "FragTrap is alive!"
 			<< std::endl;
+	this->Attack = 30;
+	this->Energy = 100;
+	this->HitPoints = 100;
 }
 FragTrap::FragTrap(const FragTrap& copy) {
 	std::cout
@@ -58,6 +58,6 @@ FragTrap&	FragTrap::operator=(const FragTrap& copy) {
 
 void FragTrap::highFivesGuys(void) {
 	std::cout
-			<< "Let's celebrate with a high-five!"
+			<< "(FragTrap) Let's celebrate with a high-five!"
 			<< std::endl;
 }

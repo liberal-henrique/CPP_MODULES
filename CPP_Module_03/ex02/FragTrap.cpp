@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap() {
 	std::cout 
-			<< "The FragTrap's deafault constructor was called."
+			<< "FragTrap's deafault constructor was called."
 			<< std::endl;
 	this->Attack = 30;
 	this->Energy = 100;
@@ -58,6 +58,6 @@ FragTrap&	FragTrap::operator=(const FragTrap& copy) {
 
 void FragTrap::highFivesGuys(void) {
 	std::cout 
-			<< "Let's celebrate with a high-five!"
+			<< "(FragTrap) Let's celebrate with a high-five!"
 			<< std::endl;
 }

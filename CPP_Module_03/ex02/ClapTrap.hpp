@@ -21,6 +21,8 @@ class ClapTrap {
 			ClapTrap();
 			ClapTrap(std::string Name);
 			ClapTrap(const ClapTrap &copy);
+			ClapTrap&	operator=(const ClapTrap &copy);
+			~ClapTrap();
 			void	attack(const std::string& target);
 			void	takeDamage(unsigned int amount);
 			void	beRapaired(unsigned int amount);
@@ -32,8 +34,6 @@ class ClapTrap {
 			void		setEnergy(unsigned int amount);
 			int			getDamageAttack() const;
 			void		setDamageAttack(int Attack);
-			ClapTrap&	operator=(const ClapTrap &copy);
-			~ClapTrap();
 
 	protected:
 			std::string		Name;

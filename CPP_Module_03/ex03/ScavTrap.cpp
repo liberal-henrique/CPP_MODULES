@@ -82,5 +82,7 @@ int ScavTrap::getDamegeAttack() const {
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << "ScavTrap is now in gate keeper mode." << std::endl;
+	std::cout 
+			<< "ScavTrap is now in gate keeper mode." 
+			<< std::endl;
 }

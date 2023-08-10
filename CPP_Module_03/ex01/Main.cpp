@@ -20,8 +20,7 @@ int main(void) {
 
 	ClapTrap D("Dog");
 	std::cout << D.getName() << " is here." << std::endl;
-
-	D.Attack()
+	D.attack(A->getName());
 	C.guardGate();
 
 	A->attack(C.getName());

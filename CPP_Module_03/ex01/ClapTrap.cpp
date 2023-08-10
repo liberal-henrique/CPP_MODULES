@@ -13,7 +13,9 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : HitPoints(10), Energy(10), Attack(0) {
-	std::cout << "ClapTrap deafault constructor called." << std::endl;
+	std::cout 
+			<< "ClapTrap deafault constructor called." 
+			<< std::endl;
 }
 
 ClapTrap::ClapTrap(std::string Name) : Name(Name), HitPoints(10), Energy(10), Attack(0) {
