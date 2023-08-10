@@ -28,11 +28,11 @@ ClapTrap::ClapTrap(std::string Name) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
+	std::cout << "The constructor copy." << std::endl;
 	this->Name = copy.Name;
 	this->Attack = copy.Attack;
 	this->HitPoints = copy.HitPoints;
 	this->Energy = copy.Energy;
-	std::cout << "The constructor copy." << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &copy) {

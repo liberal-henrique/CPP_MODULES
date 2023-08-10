@@ -43,9 +43,6 @@ ScavTrap::~ScavTrap() {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &copy) {
-	std::cout 
-			<< "ScavTrap has a operator overload." 
-			<< std::endl;
 	if (this != &copy) {
 		this->Name = copy.Name;
 		this->HitPoints = copy.HitPoints;

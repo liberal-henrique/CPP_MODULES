@@ -26,8 +26,6 @@ class Cat : public Animal {
             Cat& operator=(const Cat& copy);
             void    makeSound() const;
             std::string getType(void) const;
-    protected: 
-            std::string type;
 };
 
 #endif

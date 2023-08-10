@@ -16,6 +16,7 @@ Cat::Cat() {
     std::cout
             << "Cat constructor was called."
             << std::endl;
+    this->type = "Cat";
 }
 
 Cat::Cat(const Cat& copy) {
@@ -25,7 +26,11 @@ Cat::Cat(const Cat& copy) {
     *this = copy;
 }
 
-Cat::~Cat() {}
+Cat::~Cat() {
+        std::cout
+            << "Cat destructor."
+            << std::endl;
+}
 
 Cat& Cat::operator=(const Cat& copy) {
     std::cout
@@ -37,9 +42,7 @@ Cat& Cat::operator=(const Cat& copy) {
 }
 
 void    Cat::makeSound() const {
-    std::cout
-            << "Meows!!"
-            << std::endl;
+    std::cout << "Meows!!" << std::endl;
 }
 
 std::string Cat::getType() const {

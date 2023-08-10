@@ -31,12 +31,12 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
+	std::cout << "ClapTrap's copy constructor was called." << std::endl;
 	this->name = copy.name;
 	this->Attack = copy.Attack;
 	this->HitPoints = copy.HitPoints;
 	this->Energy = copy.Energy;
 	// *this = copy is the same
-	std::cout << "The constructor copy." << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap &copy) {
@@ -73,16 +73,14 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	{
 		this->HitPoints -= amount;
 		std::cout
-				<< this->getName()
-				<< " were attacked now "
+				<< "ClapTrap were attacked now "
 				<< this->HitPoints
 				<< " hit points total."
 				<< std::endl;
 	}
 	else
 		std::cout
-				<< this->getName()
-				<< " were attacked now, but it's already dead "
+				<< "ClapTrap were attacked now, but it's already dead "
 				<< std::endl;
 
 }
@@ -90,16 +88,14 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 void	ClapTrap::beRapaired(unsigned int amount) {
 	if (this->HitPoints <= 0 || this->Energy <= 0)
 		std::cout
-				<< this->getName()
-				<< " has no Hit points or energy anymore."
+				<< "ClapTrap has no Hit points or energy anymore."
 				<< std::endl;
 	else
 	{
 		this->Energy -= 1;
 		this->HitPoints += amount;
 		std::cout
-				<< this->getName()
-				<< " repairs itself, it gets "
+				<< "ClapTrap repairs itself, it gets "
 				<< this->HitPoints
 				<< " hit points back."
 				<< std::endl;
@@ -124,8 +120,8 @@ void	ClapTrap::setHitPoints(unsigned int amount) {
 
 int	ClapTrap::getEnergy(void) {
 	std::cout
-			<< this->getName()
-			<< " has " << this->Energy
+			<< "ClapTrap has " 
+			<< this->Energy
 			<< " points of energy."
 			<< std::endl;
 	return (this->Energy);

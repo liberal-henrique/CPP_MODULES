@@ -12,9 +12,7 @@
 
 #include "DiamondTrap.hpp"
 
-int	main(int ac, char **av) {
-	(void)ac;
-	(void)av;
+int	main(void) {
 	DiamondTrap A = DiamondTrap("Arnaldo");
 	DiamondTrap B = DiamondTrap("Galvao");
 	ClapTrap *C = new ClapTrap("Ferdinando");

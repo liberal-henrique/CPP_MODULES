@@ -22,28 +22,22 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name"
 	std::cout
 		<< "Diamond was created with a name."
 		<< std::endl;
-	// using FragTrap::HitPoints;
-	// using FragTrap::Attack;
-	// Energy = ScavTrap::Energy;
+	FragTrap::HitPoints = 100;
+	FragTrap::Attack = 30;
+	Energy = ScavTrap::Energy;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& copy) {
+	std::cout << "The constructor copy." << std::endl;
 	this->name = copy.name;
 	this->HitPoints = copy.HitPoints;
 	this->Energy = copy.Energy;
 	this->Attack = copy.Attack;
 	// *this = copy is the same
-	std::cout << "The constructor copy." << std::endl;
 }
 DiamondTrap::~DiamondTrap() {
 	std::cout << "Diamond destructor was called." << std::endl;
 }
-
-// void	DiamondTrap::attack(const std::string& target)
-// {
-// 	std::cout << "Diamond Class attack call ScavTrap's attack." << std::endl;
-// 	ScavTrap::attack(target);
-// }
 
 std::string	DiamondTrap::getName(void) {
 	return (this->name);

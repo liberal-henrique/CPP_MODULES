@@ -16,6 +16,10 @@ Animal::Animal() {
     std::cout << "The animal constructor was called." << std::endl;
 }
 
+Animal::Animal(std::string type_received) : type(type_received) {
+    std::cout << "The animal constructor was called." << std::endl;
+}
+
 Animal::Animal(const Animal& copy) {
     std::cout << "Animal copy constructor was called." << std::endl;
     *this = copy;

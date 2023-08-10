@@ -22,7 +22,7 @@ class FragTrap : virtual public ClapTrap {
 			FragTrap();
 			FragTrap(std::string name);
 			FragTrap(const FragTrap& copy);
-			virtual ~FragTrap();
+			~FragTrap();
 			FragTrap&	operator=(const FragTrap& copy);
 			void		highFivesGuys(void);
 };

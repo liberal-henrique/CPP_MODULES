@@ -26,8 +26,7 @@ class Dog : public Animal {
             Dog& operator=(const Dog&copy);
             void    makeSound() const;
             std::string getType() const;
-    protected: 
-            std::string type;
+
 };
 
 #endif

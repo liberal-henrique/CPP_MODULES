@@ -25,6 +25,7 @@ int main(void) {
 
 	A->attack(C.getName());
 	C.takeDamage(A->getDamageAttack());
+	C.beRapaired(2);
 
 	C.attack(A->getName());
 	A->takeDamage(C.getDamageAttack());
