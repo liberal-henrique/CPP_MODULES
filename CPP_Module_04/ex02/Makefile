@@ -1,10 +1,10 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	AnimalWithBrain
+NAME		=	AnimalAbstract
 
 SRCS		=	Main.cpp \
-				Animal.cpp \
+				AAnimal.cpp \
 				Brain.cpp \
 				Cat.cpp \
 				Dog.cpp \

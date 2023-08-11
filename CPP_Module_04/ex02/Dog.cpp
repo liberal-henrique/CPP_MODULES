@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 11:46:04 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:11:33 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,12 @@ Dog& Dog::operator=(const Dog& copy) {
 
 void Dog::makeSound() const {
     std::cout << "Woof!!" << std::endl;
+}
+
+void Dog::getIdeas() {
+    this->brain->showIdeas();
+}
+
+void Dog::setIdea(std::string idea) {
+    this->brain->setIdeas(idea);
 }

@@ -6,64 +6,42 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 12:08:15 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:40:56 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
 
 int main(void) {
 
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    delete j;
-    delete i;
+    Cat* dog = new Cat();
 
-    std::cout << "------------" << std::endl;
-    std::cout << "My loop" << std::endl;
+    // AAnimal testing = AAnimal();
+    AAnimal *dog3 = new Cat();
+
+
+    static_cast<Cat*>(dog3)->setIdea("Pq eu nao sou um cao?");
+    static_cast<Cat*>(dog3)->getIdeas();
+
+    dog->setIdea("I WANT To DUCK");
+    dog->getIdeas();
+    std::cout << "----------------" << std::endl;
+
+    Cat* dog2 = new Cat(*dog);
+    std::cout << std::endl;
+    dog2->setIdea("But i dont!");
+    std::cout << dog2->getType() << std::endl;
+    std::cout << std::endl;
+    dog->getIdeas();
+    std::cout << std::endl;
+    dog2->getIdeas();
     std::cout << std::endl;
 
-    int num = 2;
-    Animal* my_array[num];
-    std::cout << "Construction moment" << std::endl;
-    std::cout << std::endl;
-    for (int i = 0; i < num; i++) {
-        if (i % 2 == 0)
-            my_array[i] = new Dog();
-        else
-            my_array[i] = new Cat();
-        std::cout << "------------" << std::endl;
-    }
-    std::cout << std::endl;
-    std::cout << "Destruction moment" << std::endl;
-    std::cout << std::endl;
-    for (int i = 0; i < num; i++) {
-        delete my_array[i];
-    }
-    std::cout << "------------" << std::endl;
-
-    std::cout << "Testing Shallow copy" << std::endl;
-    std::cout << std::endl;
-
-    Dog basic;
-    {
-        Dog tmp = basic;
-    }
-
-    std::cout << "------------" << std::endl;
-
-    std::cout << "Testing Shallow copy" << std::endl;
-    std::cout << std::endl;
-
-    Cat test2;
-    {
-        Cat temp2 = test2;
-    }
-
-    std::cout << "------------" << std::endl;
+    delete dog;
+    delete dog2;
     return 0;
 }
 

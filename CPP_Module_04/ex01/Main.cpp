@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 12:08:15 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:36:37 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ int main(void) {
 
     const Animal* j = new Dog();
     const Animal* i = new Cat();
+
+    // static_cast<Cat*>(const_cast<Animal*>(i))->getIdeas();
     delete j;
     delete i;
+
 
     std::cout << "------------" << std::endl;
     std::cout << "My loop" << std::endl;

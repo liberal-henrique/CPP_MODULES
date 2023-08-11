@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 17:43:09 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 11:34:07 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:14:55 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,38 @@ Brain& Brain::operator=(const Brain& copy) {
 			this->ideas[i] = copy.ideas[i];
 	}
 	return (*this);
+}
+
+std::string Brain::getIdeas(int position) {
+	if (ideas[position] == "")
+		return (NULL);
+	return (ideas[position]);
+}
+
+void	Brain::showIdeas() {
+	int control = 0;
+
+	while (control < 100 && getIdeas(control) != "")
+	{
+		std::cout << ideas[control] << "." << std::endl;
+		control++;
+	}
+}
+
+void Brain::setIdeas(std::string idea) {
+	if (idea == "")
+		return ;
+	int control = 0;
+
+	while (control < 100)
+	{
+		if (getIdeas(control) == "") {
+				std::cout << "idea included." << std::endl;
+				ideas[control] = idea;
+				return ;
+		}
+		control++;
+	}
+	if (control == 99)
+		std::cout << "too much ideas." << std::endl;
 }

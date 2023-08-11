@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 12:07:57 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:11:32 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,12 @@ Cat& Cat::operator=(const Cat& copy) {
 
 void    Cat::makeSound() const {
     std::cout << "Meows!!" << std::endl;
+}
+
+void Cat::getIdeas() {
+    this->brain->showIdeas();
+}
+
+void Cat::setIdea(std::string idea) {
+    this->brain->setIdeas(idea);
 }

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 17:30:01 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 12:13:58 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ Animal::Animal(const Animal& copy) {
     *this = copy;
 }
 
-Animal::~Animal() {}
+Animal::~Animal() {
+    std::cout << "Animal destructor was called." << std::endl;
+}
 
 Animal& Animal::operator=(const Animal& copy) {
     std::cout << "Animal's operator overload was called." << std::endl;

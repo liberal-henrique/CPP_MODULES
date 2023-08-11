@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 17:36:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 11:34:42 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:31:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ class Brain {
 			Brain(const Brain& copy);
 			~Brain();
 			Brain& operator=(const Brain& copy);
+			std::string getIdeas(int position);
+			void setIdeas(std::string idea);
+			void	showIdeas();
+
 	private:
 			std::string	ideas[100];
 };

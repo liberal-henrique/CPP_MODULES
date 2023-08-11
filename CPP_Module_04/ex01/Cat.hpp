@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 12:02:33 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:29:53 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Cat : public Animal {
 			virtual ~Cat();
 			Cat& operator=(const Cat& copy);
 			void    makeSound() const;
+			void getIdeas();
+			virtual void setIdea(std::string);
 	private:
 			Brain *brain;
 
