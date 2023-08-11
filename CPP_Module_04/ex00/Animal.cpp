@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/07 17:30:01 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 09:19:56 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal() {
     std::cout << "The animal constructor was called." << std::endl;
+    this->type = "";
 }
 
 Animal::Animal(std::string type_received) : type(type_received) {
@@ -25,10 +26,11 @@ Animal::Animal(const Animal& copy) {
     *this = copy;
 }
 
-Animal::~Animal() {}
+Animal::~Animal() {
+    std::cout << "Animal destructor was called." << std::endl;
+}
 
 Animal& Animal::operator=(const Animal& copy) {
-    std::cout << "Animal's operator overload was called." << std::endl;
     if (this != &copy)
         this->type = copy.type;
     return (*this);

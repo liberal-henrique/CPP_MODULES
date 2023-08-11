@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 09:20:21 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/07 17:30:01 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-Dog::Dog() {
-    std::cout
-            << "Dog constructor was called."
-            << std::endl;
-    this->type = "Dog";
+Animal::Animal() {
+    std::cout << "The animal constructor was called." << std::endl;
 }
 
-Dog::Dog(const Dog& copy) {
-    std::cout
-            << "Dog copy constructor was called."
-            << std::endl;
+Animal::Animal(const Animal& copy) {
+    std::cout << "Animal copy constructor was called." << std::endl;
     *this = copy;
 }
 
-Dog::~Dog() {
-    std::cout << "Dog destructor was called." << std::endl;
-}
+Animal::~Animal() {}
 
-Dog& Dog::operator=(const Dog&copy) {
+Animal& Animal::operator=(const Animal& copy) {
+    std::cout << "Animal's operator overload was called." << std::endl;
     if (this != &copy)
         this->type = copy.type;
     return (*this);
 }
 
-void Dog::makeSound() const {
-    std::cout << "Woof!!" << std::endl;
+void Animal::makeSound() const {
+    std::cout
+            << "The Animal's class member makeSound()"
+            << std::endl;
+}
+
+std::string Animal::getType(void) const {
+    std::cout
+            << "The Animal's getType() was called."
+            << std::endl;
+    return (this->type);
 }
