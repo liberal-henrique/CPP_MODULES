@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 09:57:22 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:18:17 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(void) {
 	const WrongAnimal *test_wrong_animal = new WrongAnimal();
 	const WrongAnimal *test_cat = new WrongCat();
 
+	WrongCat *test_sound_wrong = new WrongCat();
+
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	std::cout << "Cat's sound: ";
@@ -33,15 +35,22 @@ int main(void) {
 	j->makeSound();
 	meta->makeSound();
 
-	std::cout
-			<< "---------------------------"
-			<< std::endl;
+	std::cout << "---------------------------" << std::endl;
+	std::cout << "WrongAnimal testing" << std::endl;
+	std::cout << std::endl;
 	std::cout << test_cat->getType() << " " << std::endl;
+	std::cout << std::endl;
 	std::cout << "WrongAnimal's sound: ";
 	test_wrong_animal->makeSound();
 	std::cout << "WrongCat's sound: ";
 	test_cat->makeSound();
+	std::cout << std::endl;
 
+	std::cout << "WrongCat's true sound: ";
+	static_cast<WrongCat*>(test_sound_wrong)->makeSound();
+	std::cout << std::endl;
+
+	delete test_sound_wrong;
 	delete test_wrong_animal;
 	delete test_cat;
 
