@@ -3,7 +3,7 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
 NAME		=	materia
 
-SRCS		=	Main.cpp MateriaSource.cpp
+SRCS		=	Main.cpp AMateria.cpp MateriaSource.cpp Ice.cpp Cure.cpp Character.hpp
 
 all: $(NAME)
 

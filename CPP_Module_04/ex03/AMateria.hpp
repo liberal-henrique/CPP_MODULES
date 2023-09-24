@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:23:18 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 18:28:26 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/24 18:45:57 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AMateria {
 	public:
 		AMateria();
 		AMateria(const AMateria& copy);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria& operator=(const AMateria& copy);
 		AMateria(std::string const & type);
 		std::string const & getType() const;

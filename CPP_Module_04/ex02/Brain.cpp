@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-
+ 
 Brain::Brain() {
 	std::cout
             << "Brain constructor was called."

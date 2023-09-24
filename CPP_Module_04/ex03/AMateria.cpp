@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:22:29 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 18:36:27 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/24 21:38:14 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ AMateria::AMateria(const AMateria& copy) {
 }
 
 AMateria::AMateria(std::string const & type) : type(type) {
-	std::cout << "the AMateria was created with a specific type." << std::endl;
+	std::cout << "The AMateria was created with a specific type." << std::endl;
 }
 
 AMateria::~AMateria() {
