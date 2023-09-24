@@ -1,23 +1,22 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	AnimalAbstract
+NAME		=	materia
 
-SRCS		=	Main.cpp \
-				AAnimal.cpp \
-				Brain.cpp \
-				Cat.cpp \
-				Dog.cpp \
+SRCS		=	Main.cpp MateriaSource.cpp
 
-OBJS		=	$(SRCS:.cpp=.o)
+all: $(NAME)
 
-all:	$(NAME)
+OBJS = $(SRCS:.cpp=.o)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.cpp
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(NAME):
-		$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+clean:
+		$(RM) $(OBJS)
 
 fclean: clean
 		$(RM) $(NAME)
