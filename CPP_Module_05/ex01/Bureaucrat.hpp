@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/28 17:03:48 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:07:13 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-#include <stdexcept>
-#include <string>
+# include <stdexcept>
+# include <string>
 
 #define default 150
 

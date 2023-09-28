@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/28 17:30:01 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:11:03 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ std::string const & Bureaucrat::getName(void) {
 }
 
 int const & Bureaucrat::getGrade(void) {
-		return (this->grade);
+	return (this->grade);
 }
 
 void Bureaucrat::setGrade(int newGrade) {
@@ -85,6 +85,7 @@ int Bureaucrat::catchErrors(int grade) {
 				<< e.message()
 				<< std::endl;
 		verification = 1;
+		
 	} catch (Bureaucrat::GradeTooHighException& e) {
 		std::cerr 
 				<< "We took this error." 
