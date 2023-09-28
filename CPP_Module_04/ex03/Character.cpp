@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:47:33 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 22:21:10 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:36:14 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,27 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	std::cout << "The Character was equipped" << std::endl;	
 	for (int i = 0; i < 4; i++) {
-		if (!stock[i])
-			stock[i] = m;
+		if (!stock[i] && m)
+		{
+			this->stock[i] = m;
+			m->equipped = 1;
+			break ;	
+		}
 	}
 }
 
 void Character::unequip(int idx) {
-	std::cout << "" << std::endl;	
+	std::cout << "The Character was removed" << std::endl;
+	this->stock[idx]->equipped = 0;
+	if (stock[idx] )
+		delete stock[idx];
+	stock[idx] = 0;
 }
 
-void Character::use(int idx, ICharacter& target) {
-	std::cout << "" << std::endl;	
-}
+// void Character::use(int idx, ICharacter& target) {
+// 	std::cout << "" << std::endl;	
+// }
 
-void Character::print_stock() {
-	std::cout << "" << std::endl;	
-}
+// void Character::print_stock() {
+// 	std::cout << "" << std::endl;	
+// }

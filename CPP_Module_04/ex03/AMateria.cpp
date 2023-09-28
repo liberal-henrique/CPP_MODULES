@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:22:29 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 21:38:14 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:06:45 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 AMateria::AMateria() {
 	std::cout << "The AMateria constructor was called." << std::endl;
+	this->equipped = 0;
 }
 
 AMateria::AMateria(const AMateria& copy) {

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:57:11 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 21:38:57 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/09/25 19:05:06 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 	}
 	return (0);
 }
-
 
 void	MateriaSource::printStock() {
 	for (int i = 0; i < 4; i++) {

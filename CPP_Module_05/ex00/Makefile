@@ -1,9 +1,9 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	materia
+NAME		=	bureau
 
-SRCS		=	Main.cpp AMateria.cpp MateriaSource.cpp Ice.cpp Cure.cpp Character.cpp
+SRCS		=	main.cpp Bureaucrat.cpp
 
 all: $(NAME)
 
