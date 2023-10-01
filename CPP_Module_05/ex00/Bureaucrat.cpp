@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/28 17:30:01 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:30:58 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,8 @@ Bureaucrat::Bureaucrat(Bureaucrat const & copy) {
 
 Bureaucrat::Bureaucrat(const std::string& name,const int &grade) : name(name) {
 	std::cout << "The constructor was called." << std::endl;
-	if (!catchErrors(grade))
-		this->setGrade(grade);
-	else
-	{
-		std::cout 
-				<< "The grade was setted as default status." 
-				<< std::endl;
-		this->setGrade(default);
-	}
+	checkGrade(grade);
+	this->setGrade(grade);
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -41,16 +34,8 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat& copy) {
 	if (this == &copy)
 		return (*this);
-	
-	if (!catchErrors(grade))
-		this->setGrade(grade);
-	else
-	{
-		std::cout 
-				<< "The grade was setted as default status." 
-				<< std::endl;
-		this->setGrade(default);
-	}
+	checkGrade(copy.grade);
+	this->setGrade(copy.grade);
 	const_cast<std::string&>(this->name) = copy.name;
 	return (*this);
 }
@@ -65,7 +50,7 @@ int const & Bureaucrat::getGrade(void) {
 
 void Bureaucrat::setGrade(int newGrade) {
 	this->grade = newGrade;
-}	
+}
 
 void Bureaucrat::checkGrade(int grade)
 {
@@ -75,40 +60,20 @@ void Bureaucrat::checkGrade(int grade)
 		throw GradeTooLowException();
 }
 
-int Bureaucrat::catchErrors(int grade) {
-	int	verification = 0;
-	try {
-		this->checkGrade(grade);
-	} catch(Bureaucrat::GradeTooLowException& e) {
-		std::cerr
-				<< "We too this error."
-				<< e.message()
-				<< std::endl;
-		verification = 1;
-	} catch (Bureaucrat::GradeTooHighException& e) {
-		std::cerr 
-				<< "We took this error." 
-				<< e.message()
-				<< std::endl;
-		verification = 1;
-	}
-	return (verification);
-}
-
 void Bureaucrat::increment(void) {
 	std::cout 
 			<< "Let's increment the grade."
 			<< std::endl;
-	if (!catchErrors(this->grade - 1))
-		setGrade(--this->grade);
+	checkGrade(this->grade - 1);
+	setGrade(--this->grade);
 }
 
 void Bureaucrat::decrement() {
 	std::cout 
 			<< "Let's decrement the grade."
 			<< std::endl;
-	if (!catchErrors(this->grade + 1))
-		setGrade(++this->grade);
+	checkGrade(this->grade + 1);
+	setGrade(++this->grade);
 }
 
 std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {

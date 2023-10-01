@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/28 17:03:48 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:31:20 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,20 @@ class Bureaucrat {
 			std::string const & getName(void);
 			int const & getGrade(void);
 			void setGrade(int newGrade);
-			void increment();
-			void decrement();
-			int catchErrors(int grade);
-
+			void increment(void);
+			void decrement(void);
 			void	checkGrade(int grade);
 			
 			class GradeTooHighException : public std::exception {
 				public:
-						const std::string message() const throw() {
+						virtual const char *what() const throw(){
 							return " Grade is too high.";
 						};
 			};
 			
 			class GradeTooLowException : public std::exception {
 				public:
-						const std::string message() const throw() {
+						const char *what() const throw() {
 							return " Grade is too low.";
 						};
 			};
