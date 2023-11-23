@@ -6,12 +6,11 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 15:57:23 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:33:58 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
 
 int main()
 {
@@ -27,7 +26,6 @@ int main()
 		roberto.signForm(f2);
 		lucimar.signForm(f1);
 		lucimar.signForm(f2);
-
 		std::cout << roberto.getGrade() << std::endl;
 		std::cout << lucimar.getGrade() << std::endl;
 	} 

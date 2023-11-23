@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 15:09:54 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 16:06:35 by lliberal         ###   ########.fr       */
+/*   Created: 2023/10/02 10:55:42 by lliberal          #+#    #+#             */
+/*   Updated: 2023/10/02 11:45:15 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : 
+AForm::AForm() : 
 			name(""), 
 			assign(false), 
 			grade_assingnable(150), 
@@ -23,18 +23,18 @@ Form::Form() :
 			<< std::endl;	
 }
 
-Form::Form(const std::string &name, bool assign, int grade_assingnable, int grade_executable) :
+AForm::AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable) :
 	name(name), assign(assign), grade_assingnable(grade_assingnable), grade_executable(grade_executable) {
-		std::cout << "The form was created with all the content." << std::endl;
+		std::cout << "The AForm was created with all the content." << std::endl;
 }
 
-Form::~Form() {
+AForm::~AForm() {
 	std::cout 
 			<< "The default destructor was called."
 			<< std::endl;
 }
 
-void Form::beSigned(Bureaucrat& officer) {
+void AForm::beSigned(Bureaucrat& officer) {
 	if (officer.getGrade() > this->grade_assingnable)
 		throw GradeTooLowException();
 	else
@@ -44,24 +44,24 @@ void Form::beSigned(Bureaucrat& officer) {
 	}
 }
 
-bool Form::getAssign()
+bool AForm::getAssign()
 {
 	return (this->assign);
 }
 
-std::string const & Form::getName(void) {
+std::string const & AForm::getName(void) {
 	return (this->name);
 }
 
-int const & Form::getGradeAssingnable(void)  {
+int const & AForm::getGradeAssingnable(void)  {
 	return (this->grade_assingnable);
 }
 
-int const & Form::getGradeExecutable(void)  {
+int const & AForm::getGradeExecutable(void)  {
 	return (this->grade_assingnable);
 }
 
-void Form::checkGrade(int grade)
+void AForm::checkGrade(int grade)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -69,7 +69,8 @@ void Form::checkGrade(int grade)
 		throw GradeTooLowException();
 }
 
-std::ostream& operator<<(std::ostream& content, Form& i) {
+std::ostream& operator<<(std::ostream& content, AForm& i) {
 	content << "Name: " << i.getName() << ", Bureaucrat grade " << i.getGradeAssingnable();
 	return (content);
 }
+

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 16:44:54 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:45:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	public:
-			Form();
-			~Form();
-			Form(Form const& copy);
-			Form& operator=(const Form& copy);
-			Form(const std::string &name, bool assign, int grade_assingnable, int grade_executable);
+			AForm();
+			AForm(AForm const& copy);
+			AForm& operator=(const AForm& copy);
+			~AForm();
+			AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable);
 			void beSigned(Bureaucrat& officer);
 			void	checkGrade(int grade);
-
 			std::string const &getName(void);
 			bool getAssign();
 			int const & getGradeAssingnable(void);
 			int const & getGradeExecutable(void);
+			virtual void execute(Bureaucrat const & executor) const = 0;
 
 			class GradeTooHighException : public std::exception {
 				public:
@@ -53,6 +53,6 @@ class Form {
 			const int grade_assingnable;
 			const int grade_executable;
 };
-std::ostream& operator<<(std::ostream& content, Form& i);
+std::ostream& operator<<(std::ostream& content, AForm& i);
 
 #endif

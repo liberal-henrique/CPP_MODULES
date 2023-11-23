@@ -3,7 +3,11 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
 NAME		=	bureau
 
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp
+SRCS		=	main.cpp \
+				Bureaucrat.cpp \
+				PresidentialPardonForm.cpp \
+				RobotomyRequestForm \
+				ShrubberyCreationForm \
 
 all: $(NAME)
 
