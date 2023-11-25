@@ -6,16 +6,13 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 16:01:09 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:42:24 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : 
-				name(""), 
-				grade(default) 
-{
+Bureaucrat::Bureaucrat() : name(""), grade(default) {
 	std::cout << "The constructor was called." << std::endl;	
 }
 
@@ -24,9 +21,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const & copy) {
 	*this = copy;
 }
 
-Bureaucrat::Bureaucrat(const std::string& name,const int &grade) : 
-						name(name)
-{
+Bureaucrat::Bureaucrat(const std::string& name,const int &grade) : name(name) {
 	std::cout << "The constructor was called." << std::endl;
 	checkGrade(grade);
 	this->setGrade(grade);
@@ -81,18 +76,31 @@ void Bureaucrat::checkGrade(int grade)
 		throw GradeTooLowException();
 }
 
-void	Bureaucrat::signForm(Form &form) {
+void	Bureaucrat::signForm(AForm &form) {
 	checkGrade(this->grade);
-	if (form.getAssign() == false && this->grade <= form.getGradeAssingnable()) {
+	if (form.getAssign() == false 
+			&& this->grade <= form.getGradeAssingnable())
+	{
 		form.beSigned(*this);
-		std::cout << getName() << " signed " << form.getName() << "." << std::endl;
+		std::cout 
+				<< getName() 		
+				<< " signed " 
+				<< form.getName() 
+				<< "." 
+				<< std::endl;
 	}
 	else
 	{
-		std::cerr << this->getName() <<  " couldn’t sign " << form.getName() << " because ";
+		std::cerr 
+				<< this->getName() 
+				<<  " couldn’t sign " 
+				<< form.getName() 
+				<< " because ";
 		if (grade > form.getGradeAssingnable())
 		{
-			std::cerr << "the officer's grade is not high enough." << std::endl;
+			std::cerr 
+					<< "the officer's grade is not high enough." 
+					<< std::endl;
 			throw GradeTooLowException();
 		}
 		else
@@ -108,3 +116,5 @@ std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {
 			<< i.getGrade();
 	return (content);
 }
+
+

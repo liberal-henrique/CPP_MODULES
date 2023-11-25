@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 13:36:37 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:38:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,42 @@ int main(void) {
     }
 
     std::cout << "------------" << std::endl;
+
+	std::cout << "Testing Copy" << std::endl;
+    std::cout << std::endl;
+
+    Animal tst;
+	tst.setType("Rat");
+
+	Animal tst2;
+	tst2.setType("Cat");
+	
+	tst = tst2;
+
+	// Animal tst;
+	// tst.setType("Rat");
+
+	// Animal tst2(tst);
+
+	std::cout << "test Type is " << tst2.getType() << std::endl;
+
+	tst.setType("Galinha");
+	
+	std::cout << "Second test Type is " << tst.getType() << std::endl;
+
+
+	std::cout << "------------" << std::endl;
+
+	std::cout << "Common test" << std::endl;
+    std::cout << std::endl;
+
+	const Animal *here = new Dog();
+	const Animal *there = new Cat();
+
+	delete here;
+	delete there;
+
+	
     return 0;
 }
 

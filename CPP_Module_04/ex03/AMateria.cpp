@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:22:29 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/27 20:06:45 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:46:20 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ AMateria& AMateria::operator=(const AMateria& copy) {
 
 std::string const & AMateria::getType() const {
 	return (this->type);	
+}
+
+void	AMateria::setType(std::string _type) {
+	this->type = _type;
 }

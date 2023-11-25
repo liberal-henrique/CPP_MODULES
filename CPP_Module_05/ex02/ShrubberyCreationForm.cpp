@@ -6,35 +6,49 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:39 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/02 11:46:48 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:32:53 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() 
-	: AForm ("ShrubberyCreationForm", false, 145, 137) {
+	: AForm ("ShrubberyCreationForm", false, 145, 137), _target("default")
+{
 	std::cout 
 			<< "The ShrubberyCreationForm constructor was called." 
 			<< std::endl;	
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable) 
-	: AForm(name, assign, grade_assingnable, grade_executable) {
-		std::cout << "The ShrubberyCreationForm was created with all the content." << std::endl;
-}
-
-ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "The ShrubberyCreationForm destructor was called." << std::endl;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy) 
-	: AForm ("ShrubberyCreationForm", false, 145, 137), target(copy.target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) 
+		: AForm ("ShrubberyCreationForm", false, 145, 137), _target(target)
 {}
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+	std::cout 
+			<< "The ShrubberyCreationForm destructor was called." 
+			<< std::endl;
 }
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const & copy) 
+{
+	this->_target = copy.getTarget();
+	return (*this);
+}
+
+
+std::string	ShrubberyCreationForm::getTarget() const {
+	return (this->_target);
+}
+
+void ShrubberyCreationForm::setTarget(std::string target) {
+	this->_target = target;
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	if (this->getAssign())
+}
+
 
 
 //        _-_

@@ -6,30 +6,31 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/02 11:15:16 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:33:51 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef SHRUBBERYCREATIONFORM_HPP 
-# define SHRUBBERY_HPP
+# ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-# include <iostream>
-# include <stdexcept>
-# include <string>
 # include "AForm.hpp"
+# include <string>
+# include <iostream>
+# include <exception>
 
 class ShrubberyCreationForm : public AForm {
 	public :
 			ShrubberyCreationForm();
-			ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-			ShrubberyCreationForm(std::string Name);
-			ShrubberyCreationForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable);
-			ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
+			ShrubberyCreationForm(std::string target);
 			~ShrubberyCreationForm();
+			ShrubberyCreationForm(const ShrubberyCreationForm& copy);
+			ShrubberyCreationForm& operator=(ShrubberyCreationForm const & copy);
 
-			void execute(Bureaucrat const & executor) const;
+			void 			execute(Bureaucrat const & executor) const;
+			std::string 	getTarget() const;
+			void			setTarget(std::string target);
 	private:
-			std::string target;
+			std::string _target;
 
 };
 

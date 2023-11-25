@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:57:37 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/24 21:54:52 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/24 10:43:33 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class MateriaSource : public IMateriaSource {
 			MateriaSource& operator=(const MateriaSource& copy);
 			void learnMateria(AMateria*);
 			void printStock();
+			void setMateriaType(int idx, std::string _type);
 			AMateria* createMateria(std::string const & type);
 			
 	private:

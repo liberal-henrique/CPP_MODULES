@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/02 11:45:22 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 11:27:25 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FORM_HPP
 
 # include <iostream>
-# include <stdexcept>
+# include <exception>
 # include <string>
 # include "Bureaucrat.hpp"
 
@@ -25,10 +25,12 @@ class AForm {
 			AForm();
 			AForm(AForm const& copy);
 			AForm& operator=(const AForm& copy);
-			~AForm();
+			virtual ~AForm();
 			AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable);
 			void beSigned(Bureaucrat& officer);
+			
 			void	checkGrade(int grade);
+			
 			std::string const &getName(void);
 			bool getAssign();
 			int const & getGradeAssingnable(void);

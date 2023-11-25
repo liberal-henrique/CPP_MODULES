@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:54 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 16:06:35 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 15:38:20 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ Form::Form() :
 
 Form::Form(const std::string &name, bool assign, int grade_assingnable, int grade_executable) :
 	name(name), assign(assign), grade_assingnable(grade_assingnable), grade_executable(grade_executable) {
-		std::cout << "The form was created with all the content." << std::endl;
+		std::cout 
+				<< "The form was created with all the content." 
+				<< std::endl;
 }
 
 Form::~Form() {
@@ -37,15 +39,16 @@ Form::~Form() {
 void Form::beSigned(Bureaucrat& officer) {
 	if (officer.getGrade() > this->grade_assingnable)
 		throw GradeTooLowException();
-	else
-	{
+	else {
 		this->assign = true;
-		std::cout << this->name << " was assigned." << std::endl;
+		std::cout 
+				<< this->name 
+				<< " was assigned." 
+				<< std::endl;
 	}
 }
 
-bool Form::getAssign()
-{
+bool Form::getAssign() {
 	return (this->assign);
 }
 
@@ -70,6 +73,10 @@ void Form::checkGrade(int grade)
 }
 
 std::ostream& operator<<(std::ostream& content, Form& i) {
-	content << "Name: " << i.getName() << ", Bureaucrat grade " << i.getGradeAssingnable();
+	content 
+		<< "Name: " 
+		<< i.getName() 
+		<< ", Bureaucrat grade " 
+		<< i.getGradeAssingnable();
 	return (content);
 }

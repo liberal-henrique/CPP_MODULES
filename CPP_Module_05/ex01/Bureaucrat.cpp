@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 16:01:09 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 15:47:54 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,22 +82,33 @@ void Bureaucrat::checkGrade(int grade)
 }
 
 void	Bureaucrat::signForm(Form &form) {
-	checkGrade(this->grade);
-	if (form.getAssign() == false && this->grade <= form.getGradeAssingnable()) {
-		form.beSigned(*this);
-		std::cout << getName() << " signed " << form.getName() << "." << std::endl;
-	}
-	else
+	try
 	{
-		std::cerr << this->getName() <<  " couldn’t sign " << form.getName() << " because ";
-		if (grade > form.getGradeAssingnable())
-		{
-			std::cerr << "the officer's grade is not high enough." << std::endl;
-			throw GradeTooLowException();
+		checkGrade(this->grade);
+		if (!form.getAssign()) {	
+			form.beSigned(*this);
+			std::cout 
+					<< getName() 		
+					<< " signed " 
+					<< form.getName() 
+					<< "." 
+					<< std::endl;
+		} else {
+			std::cerr 
+				<< this->getName() 
+				<<  " couldn’t sign " 
+				<< form.getName() 
+				<< " because the is already assigned."
+				<< std::endl;
 		}
-		else
-			std::cerr << "the is already assigned." << std::endl;
 	}
+	catch(std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
+
+	
 }
 
 std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {

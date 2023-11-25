@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 11:30:58 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 12:02:33 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ void Bureaucrat::decrement() {
 }
 
 std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {
-	content << "Name: " << i.getName() << ", Bureaucrat grade " << i.getGrade();
+	content << i.getName() << ", bureaucrat grade " << i.getGrade();
 	return (content);
 }

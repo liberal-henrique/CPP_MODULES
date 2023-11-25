@@ -5,9 +5,8 @@ NAME		=	bureau
 
 SRCS		=	main.cpp \
 				Bureaucrat.cpp \
-				PresidentialPardonForm.cpp \
-				RobotomyRequestForm \
-				ShrubberyCreationForm \
+				AForm.cpp\
+				ShrubberyCreationForm.cpp \
 
 all: $(NAME)
 

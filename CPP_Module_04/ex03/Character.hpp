@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 21:47:18 by lliberal          #+#    #+#             */
-/*   Updated: 2023/09/27 19:15:39 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 12:55:47 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ class Character : public ICharacter {
 		std::string const & getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
-		// void use(int idx, ICharacter& target);
-		// void print_stock();
+		void use(int idx, ICharacter& target);
+		void print_stock();
 	
 	private:
 			AMateria *stock[4];
+			AMateria *floor[100000];
 			std::string name;
 };
 

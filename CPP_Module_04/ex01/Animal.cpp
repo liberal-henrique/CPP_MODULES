@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:25:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/08/11 12:13:58 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:00:01 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,13 @@ void Animal::makeSound() const {
 }
 
 std::string Animal::getType(void) const {
-    std::cout
-            << "The Animal's getType() was called."
-            << std::endl;
+    // std::cout
+    //         << "The Animal's getType() was called."
+    //         << std::endl;
     return (this->type);
 }
+
+void		Animal::setType(std::string _type) {
+	this->type = _type;
+}
+

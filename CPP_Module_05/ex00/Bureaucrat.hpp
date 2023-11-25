@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 11:31:20 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:55:32 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ class Bureaucrat {
 							return " Grade is too low.";
 						};
 			};
-
 	private:
 			std::string const name;
 			int grade;
