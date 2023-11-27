@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 15:47:54 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:11:40 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,6 @@ void	Bureaucrat::signForm(Form &form) {
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
-
-	
 }
 
 std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {
@@ -118,4 +115,12 @@ std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {
 			<< ", Bureaucrat grade "
 			<< i.getGrade();
 	return (content);
+}
+
+const char *	Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Grade is too high.");
+}
+
+const char *	Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("Grade is too low.");
 }

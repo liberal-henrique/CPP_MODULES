@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:54 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 15:38:20 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:19:45 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,12 @@ std::ostream& operator<<(std::ostream& content, Form& i) {
 		<< ", Bureaucrat grade " 
 		<< i.getGradeAssingnable();
 	return (content);
+}
+
+const char * Form::GradeTooHighException::what() const throw() {
+	return ("Grade is too high.");
+}
+
+const char * Form::GradeTooLowException::what() const throw() {
+	return ("Grade is too low.");
 }

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:08 by lliberal          #+#    #+#             */
-/*   Updated: 2023/10/01 13:36:19 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 15:59:39 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,12 @@ class Bureaucrat {
 
 			class GradeTooHighException : public std::exception {
 				public:
-						virtual const char *what() const throw(){
-							return " Grade is too high.";
-						};
+						virtual const char *what() const throw();
 			};
-			
+
 			class GradeTooLowException : public std::exception {
 				public:
-						const char *what() const throw() {
-							return " Grade is too low.";
-						};
+						virtual const char *what() const throw();
 			};
 	private:
 			std::string const name;

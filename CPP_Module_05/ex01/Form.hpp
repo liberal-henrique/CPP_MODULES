@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/24 14:03:33 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:17:31 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,11 @@ class Form {
 
 			class GradeTooHighException : public std::exception {
 				public:
-						virtual const char *what() const throw() {
-							return " Grade is too high.";
-						}
+						virtual const char *what() const throw();
 			};
 			class GradeTooLowException : public std::exception {
 				public:
-						virtual const char *what() const throw() {
-							return " Grade is too low.";
-						}
+						virtual const char *what() const throw();
 			};
 	private:
 			const std::string name;

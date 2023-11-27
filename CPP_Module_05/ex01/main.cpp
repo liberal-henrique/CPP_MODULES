@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 15:34:15 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:20:14 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int main()
 		// 
 		
 		lucimar.signForm(f1);
-		// lucimar.signForm(f1);
+		roberto.signForm(f1);
 		// lucimar.signForm(f2);
 		std::cout << "--------------" << std::endl;
-		// roberto.signForm(f2);
+		roberto.signForm(f2);
 
 
 		std::cout << roberto.getGrade() << std::endl;

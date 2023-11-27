@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 14:40:17 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:41:53 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
-
 
 int main()
 {
@@ -76,6 +74,6 @@ int main()
 			return (1);
 		}
 	}
-	
+		
     return 0;
 }
