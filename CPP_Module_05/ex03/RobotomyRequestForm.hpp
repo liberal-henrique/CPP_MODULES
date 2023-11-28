@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:37 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 13:41:35 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:33 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class RobotomyRequestForm : public AForm {
 			RobotomyRequestForm(std::string target);
 			RobotomyRequestForm(const RobotomyRequestForm& copy);
 			RobotomyRequestForm& operator=(const RobotomyRequestForm& copy);
-			~RobotomyRequestForm();
+			virtual ~RobotomyRequestForm();
 
 			virtual void DIY() const;
 			

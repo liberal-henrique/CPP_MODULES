@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 12:25:38 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:45 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ShrubberyCreationForm : public AForm {
 			ShrubberyCreationForm();
 			ShrubberyCreationForm(std::string target);
 			ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-			~ShrubberyCreationForm();
+			virtual ~ShrubberyCreationForm();
 			ShrubberyCreationForm& operator=(ShrubberyCreationForm const & copy);
 			
 			virtual void	DIY() const;

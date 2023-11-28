@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:27 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 14:16:40 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:31:41 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresidentialPardonForm : public AForm {
 			PresidentialPardonForm(const PresidentialPardonForm& copy);
 			PresidentialPardonForm(std::string target);
 			PresidentialPardonForm& operator=(const PresidentialPardonForm& copy);
-			~PresidentialPardonForm();
+			virtual ~PresidentialPardonForm();
 
 			virtual void DIY() const;
 
