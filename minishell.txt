@@ -1,0 +1,4 @@
+	This was the most intrusting project in the C language that I did in 42 Lisboa. First, this is the first 
+project that we have to do in group. Therefore, I had to improve my capacity to read and understand the code 
+We have to 
+create our own shell, taking the true one as reference. So, we will have to make our

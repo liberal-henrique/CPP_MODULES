@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:57:11 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 15:02:44 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:27:27 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void MateriaSource::learnMateria(AMateria *content) {
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
-	
+
 	for (int i = 0; i < 4; i++) {
 		if (stock[i] && stock[i]->getType() == type) {
 			std::cout

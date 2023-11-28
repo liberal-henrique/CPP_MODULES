@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:48:47 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 15:25:52 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:28:24 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
     me->equip(tmp);
 	std::cout << "------------------------" << std::endl;
 	std::cout << "2" << std::endl;
-    tmp = src->createMateria("cure");
+    tmp = src->createMateria(NULL);
     me->equip(tmp);
 	std::cout << "------------------------" << std::endl;
 	std::cout << "3" << std::endl;

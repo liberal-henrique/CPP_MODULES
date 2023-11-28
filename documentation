@@ -1,0 +1,7 @@
+	A Classe AForm eh abstrata pq o metodo
+execute() eh puramente virtual. Dessa forma,
+deveremos sobrescreve-lo nas funcoes concretas.
+Precisaremos verificar se o form esta assinado
+e se a graduacao do burocrata eh suficiente para
+executar o formulario. De outro modo, throw an 
+error.
