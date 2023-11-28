@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 11:11:37 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:52:51 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Bureaucrat;
 class AForm {
 	public:
 			AForm();
-			AForm(AForm const& copy);
+			AForm(const AForm & copy);
 			AForm& operator=(const AForm& copy);
 			virtual ~AForm();
 			AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable);
@@ -32,7 +32,7 @@ class AForm {
 			void	checkGrade(int grade_assingnable, int grade_executable);
 			
 			std::string const &getName(void);
-			bool getAssign();
+			bool getAssign() const;
 			int const & getGradeAssingnable(void);
 			int const & getGradeExecutable(void);
 			void execute(const Bureaucrat & executor) const;

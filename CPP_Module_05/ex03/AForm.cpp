@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:55:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 11:37:22 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:50:46 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,17 @@ AForm::AForm(const std::string &name, bool assign, int grade_assingnable, int gr
 		std::cout << "The AForm was created with all the content." << std::endl;
 }
 
+AForm::AForm(const AForm & copy) 
+	: name(copy.name), grade_assingnable(copy.grade_assingnable), grade_executable(copy.grade_assingnable) {
+	std::cout << "The AForm copy constructor was called." << std::endl;
+	*this = copy;
+}
+
+AForm& AForm::operator=(const AForm& copy) {
+	this->assign = copy.getAssign();
+	return (*this);
+}
+
 AForm::~AForm() {
 	std::cout 
 			<< "The default destructor was called."
@@ -44,7 +55,7 @@ void AForm::beSigned(Bureaucrat& officer) {
 	}
 }
 
-bool AForm::getAssign() {
+bool AForm::getAssign() const {
 	return (this->assign);
 }
 

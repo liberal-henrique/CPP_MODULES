@@ -6,18 +6,14 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:55:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 11:37:22 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/27 15:55:02 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm() : 
-			name(""), 
-			assign(false), 
-			grade_assingnable(150), 
-			grade_executable(150) 
-{
+AForm::AForm() 
+	: name(""), assign(false), grade_assingnable(150), grade_executable(150) {
 	std::cout 
 			<< "The default constructor was called." 
 			<< std::endl;	
@@ -28,23 +24,35 @@ AForm::AForm(const std::string &name, bool assign, int grade_assingnable, int gr
 		std::cout << "The AForm was created with all the content." << std::endl;
 }
 
+AForm::AForm(const AForm & copy) 
+	: name(copy.name), assign(false), grade_assingnable(copy.grade_assingnable), grade_executable(copy.grade_executable) {
+	std::cout 
+			<< "The copy constructor was called." 
+			<< std::endl;
+	*this = copy;
+}
+
 AForm::~AForm() {
 	std::cout 
 			<< "The default destructor was called."
 			<< std::endl;
 }
 
+AForm& AForm::operator=(const AForm& copy) {
+	this->assign = copy.getAssign();
+	return (*this);
+}
+
 void AForm::beSigned(Bureaucrat& officer) {
 	if (officer.getGrade() > this->grade_assingnable)
 		throw GradeTooLowException();
-	else
-	{
+	else {
 		this->assign = true;
 		std::cout << this->name << " was assigned." << std::endl;
 	}
 }
 
-bool AForm::getAssign() {
+bool AForm::getAssign() const {
 	return (this->assign);
 }
 
