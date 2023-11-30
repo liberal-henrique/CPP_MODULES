@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 09:55:51 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/29 14:41:27 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,26 @@ void Bureaucrat::executeForm(AForm const & form) {
 		form.execute(*this);
 		std::cout << "The form was executed" << std::endl;
 	}
-	catch(std::exception ) {
-		
+	catch(AForm::GradeTooHighException &e) {
+		std::cerr 
+				<< "Exception caught: " 
+				<< e.what() 
+				<< std::endl;
+		delete e.clean();
+	}
+	catch(AForm::GradeTooLowException &e) {
+		std::cerr 
+				<< "Exception caught: " 
+				<< e.what() 
+				<< std::endl;
+		delete e.clean();
+	}
+	catch(AForm::FormIsNotAssigned &e) {
+		std::cerr 
+				<< "Exception caught: " 
+				<< e.what() 
+				<< std::endl;
+		delete e.clean();
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:34 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 13:48:12 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:21:42 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void RobotomyRequestForm::DIY() const {
 				<< std::endl;
 	}
 
-	std::cout << "Rand: " << std::setprecision(1) << num << std::endl;
+	// std::cout << "Rand: " << std::setprecision(1) << num << std::endl;
 }

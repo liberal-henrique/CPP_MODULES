@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:34 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 13:48:12 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:52:24 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ void RobotomyRequestForm::DIY() const {
 				<< "The robotomized failed." 
 				<< std::endl;
 	}
-
 	std::cout << "Rand: " << std::setprecision(1) << num << std::endl;
 }

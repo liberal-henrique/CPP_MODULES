@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:26:13 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/28 14:09:34 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:39:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ AForm * makeTree(std::string target) {
 	return (new ShrubberyCreationForm(target));
 }
 
+const char * Intern::FormNotCreated::what() const throw() {
+	return ("Form was not properly created.");
+}
+
 AForm * Intern::makeForm(std::string formName, std::string target) {
 	AForm *form = NULL;
 
@@ -79,6 +83,6 @@ AForm * Intern::makeForm(std::string formName, std::string target) {
 	if (i < 3)
 		form = function[i](target);
 	if (i == 4)
-		std::cout << "This form doesn't exist." << std::endl;
+		throw FormNotCreated();
 	return (form);	
 }

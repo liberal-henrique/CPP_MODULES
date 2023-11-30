@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 14:40:17 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/29 13:22:20 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main()
 			return (1);
 		}
 	}
-
+std::cout << "---------------------------" << std::endl;
 	{
 		try {
 			Bureaucrat roberto("roberto", 1);
@@ -58,7 +58,7 @@ int main()
 			return (1);
 		}
 	}
-
+std::cout << "---------------------------" << std::endl;
 	{
 		try {
 			Bureaucrat roberto("roberto", 1);

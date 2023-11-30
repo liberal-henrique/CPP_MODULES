@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/28 14:20:55 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:45:56 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 int main()
 {
 	try {
-    	Bureaucrat reinaldo("Reinaldo", 2);
-    	Bureaucrat ernandes("Ernandes", 149);
-    	Bureaucrat roberto("Roberto", 150);
+    	// Bureaucrat reinaldo("Reinaldo", 2);
+    	// Bureaucrat ernandes("Ernandes", 149);
+    	Bureaucrat roberto("Roberto", 149);
 
-		reinaldo.increment();
-		ernandes.decrement();
+		// reinaldo.increment();
+		// ernandes.decrement();
 		roberto.decrement();
-		std::cout << reinaldo << std::endl;
-		std::cout << ernandes << std::endl;
+		// std::cout << reinaldo << std::endl;
+		// std::cout << ernandes << std::endl;
 		std::cout << roberto << std::endl;
 	}
 	catch (std::exception& e) {

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 15:50:40 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:49:39 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,29 @@ class AForm {
 			void execute(const Bureaucrat & executor) const;
 
 			class GradeTooHighException : public std::exception {
+				const AForm * inform;
 				public:
+						GradeTooHighException(const AForm *inform) : inform(inform) {}
 						virtual const char *what() const throw();
+						virtual const AForm *clean() const throw();
 			};
+			
 			class GradeTooLowException : public std::exception {
+				const AForm *inform;
 				public:
+						GradeTooLowException(const AForm *inform) : inform(inform) {}
 						virtual const char *what() const throw();
+						virtual const AForm *clean() const throw();
 			};
+			
 			class FormIsNotAssigned : public std::exception {
+				const AForm *inform;
 				public:
+						FormIsNotAssigned(const AForm *inform) : inform(inform) {}
 						virtual const char *what() const throw();
+						virtual const AForm *clean() const throw();
 			};
+			
 	protected:
 			virtual void	DIY() const = 0;
 	private:

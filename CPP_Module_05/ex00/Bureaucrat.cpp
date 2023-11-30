@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 12:02:33 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/11/30 10:41:53 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,28 @@ void Bureaucrat::checkGrade(int grade)
 		throw GradeTooLowException();
 }
 
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return " Grade is too high.";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return " Grade is too low.";
+}
+
 void Bureaucrat::increment(void) {
+	checkGrade(this->grade - 1);
+	setGrade(--this->grade);
 	std::cout 
 			<< "Let's increment the grade."
 			<< std::endl;
-	checkGrade(this->grade - 1);
-	setGrade(--this->grade);
 }
 
 void Bureaucrat::decrement() {
+	checkGrade(this->grade + 1);
+	setGrade(++this->grade);
 	std::cout 
 			<< "Let's decrement the grade."
 			<< std::endl;
-	checkGrade(this->grade + 1);
-	setGrade(++this->grade);
 }
 
 std::ostream& operator<<(std::ostream& content, Bureaucrat& i) {
