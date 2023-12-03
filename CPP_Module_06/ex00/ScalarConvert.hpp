@@ -24,7 +24,12 @@ class ScalarConvert {
 		ScalarConvert(ScalarConvert const & copy);
 		ScalarConvert &operator=(ScalarConvert const &copy);
 		~ScalarConvert();
-		static void Convert(std::string element);
+		static void manager(std::string element);
+		void convertInput(char c);
+		void convertInput(int i);
+		void convertInput(float f);
+		void convertInput(double d);
+
 		static char		toChar;
 		static int		toInt;
 		static float	toFloat;

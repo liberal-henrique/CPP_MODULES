@@ -1,6 +1,6 @@
 Float --> 
 			42.0f  RIGHT
-			42.f   RIGHT
+			42.f   WRONG
 			42.0f0 WRONG
 			42.a   WRONG
 			42.0f. WRONG

@@ -36,8 +36,43 @@ ScalarConvert::~ScalarConvert() {
 	std::cout << "The destructor called." << std::endl;
 }
 
+bool validateRepetitiveInput(std::string element) {
+	if (element.find('.') != element.find_last_of('.') 
+			|| element.find('f') != element.find_last_of('f') 
+				|| element.find('e') != element.find_last_of('e') 
+					|| element.find('+') != element.find_last_of('+') 
+						|| element.find('-') != element.find_last_of('-'))
+		return (false);
+	return (true);
+}
+
+bool validateFloatInput(std::string element) {
+	if ((element.find('f') != std::string::npos && element[element.length() - 1] != 'f')
+			|| (element.find('f') != std::string::npos && element[element.find('f') - 1] == '.')
+				|| (element.find('f') != std::string::npos && element.find('.') == std::string::npos))
+		return (false);
+	return (true);
+}
+
+bool validateSigns(std::string element) {
+	if ((element.find('-') != 0 && element.find('-') != std::string::npos)
+			|| (element.find('+') != 0 && element.find('+') != std::string::npos))
+		return (false);
+	char c = element[element.length() - 1];
+	if (c == '.' || c == '+' || c == '-')
+		return (false);
+	return (true);
+}
+
+bool checker(std::string element) {
+	if (!validateRepetitiveInput(element) && !validateFloatInput(element) && !validateSigns(element))
+		return (false);
+	if (element.find_first_not_of("0123456789.ef-+") != std::string::npos && element.size() != 1)
+		return (false);
+	return (true);
+}
+
 void	identifyType(std::string element) {
-	std::cout << element << std::endl;
 	if (element.size() == 1 && !isdigit(element[0]))
 		std::cout << "This is a char." << std::endl;
 	else if (element.find('.') != std::string::npos 
@@ -49,72 +84,14 @@ void	identifyType(std::string element) {
 		std::cout << "This is a integer." << std::endl;
 }
 
-bool validateInput(std::string element) {
-	if (element.find('.') != element.find_last_of('.'))
-	{
-		std::cout << 0 << std::endl;
-
-		return (false);
-	}
-	if (element.find('f') != element.find_last_of('f')) {
-		std::cout << 1 << std::endl;
-		
-		return (false);
-	}
-	if (element.find('e') != element.find_last_of('e')) {
-		std::cout << 2 << std::endl;
-		
-		return (false);
-	}
-	if (element.find('+') != element.find_last_of('+'))
-	{
-		std::cout << 3 << std::endl;
-
-		return (false);
-	}
-	if (element.find('-') != element.find_last_of('-')) {
-		std::cout << 4 << std::endl;
-		
-		return (false);
-	}
-	if (element.find('-') != 0 && element.find('-') != std::string::npos) {
-		std::cout << 5 << std::endl;
-		return (false);
-	}
-	if (element.find('+') != 0 && element.find('+') != std::string::npos)
-	{
-		std::cout << 6 << std::endl;
-
-		return (false);
-	}
-	if (element[element.find('.') + 1] == 'f') {
-		std::cout << 7 << std::endl;
-		
-		return (false);
-	}
-	if (element.find('f') && !element.find('.')) {
-		std::cout << 8 << std::endl;
-
-		return (false);
-	}
-	char c = element[element.length() - 1];
-	if (c == '.' || c == '+' || c == '-') {
-		std::cout << 9 << std::endl;
-		
-		return (false);
-	}
-	if (element.find_first_not_of("0123456789.ef-+") != std::string::npos && element.size() != 1) {
-		std::cout << 10 << std::endl;
-		return (false);
-	}
-	return (true);
-}
-
-
-void ScalarConvert::Convert(std::string element) {
-	if (!validateInput(element)) {
+void ScalarConvert::manager(std::string element) {
+	if (!checker(element)) {
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
+	char a = static_cast<char>(351);
+	if (isprint(a))
+		std::cout << a << std::endl;
 	identifyType(element);
+	
 }
