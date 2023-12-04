@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:56:38 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/29 09:35:31 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:42:16 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int main(int ac, char **av) {
 	}
 	
 	ScalarConvert test;
-	test.Convert(av[1]); 
+	test.manager(av[1]); 
 	return (0);
 }
