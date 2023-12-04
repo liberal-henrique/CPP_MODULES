@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/30 10:45:56 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:53:14 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	try {
     	// Bureaucrat reinaldo("Reinaldo", 2);
     	// Bureaucrat ernandes("Ernandes", 149);
-    	Bureaucrat roberto("Roberto", 149);
+    	Bureaucrat roberto("Roberto", 151);
 
 		// reinaldo.increment();
 		// ernandes.decrement();

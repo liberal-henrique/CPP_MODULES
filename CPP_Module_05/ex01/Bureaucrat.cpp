@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 11:12:01 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 16:11:40 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:44:55 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,11 @@ void Bureaucrat::checkGrade(int grade)
 void	Bureaucrat::signForm(Form &form) {
 	try
 	{
-		checkGrade(this->grade);
+		// checkGrade(this->grade);
+		if (grade < 1)
+			throw GradeTooHighException();
+		else if (grade > 150)
+			throw GradeTooLowException();
 		if (!form.getAssign()) {	
 			form.beSigned(*this);
 			std::cout 

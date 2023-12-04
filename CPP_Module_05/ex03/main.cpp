@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 12:45:44 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/30 12:51:25 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:01:07 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,24 @@ int main()
 					<< "Exception caught: " 
 					<< e.what() 
 					<< std::endl;
-			// delete e.clean();
 		}
 		catch(AForm::GradeTooLowException &e) {
 			std::cerr 
 					<< "Exception caught: " 
 					<< e.what() 
 					<< std::endl;
-			// delete e.clean();
 		}
 		catch(AForm::FormIsNotAssigned &e) {
 			std::cerr 
 					<< "Exception caught: " 
 					<< e.what() 
 					<< std::endl;
-			// delete e.clean();
 		}
 		catch(Intern::FormNotCreated &e) {
 			std::cerr 
 					<< "Exception caught: " 
 					<< e.what() 
 					<< std::endl;
-			// delete e.clean();
 		}
 		if (form)
 			delete form;

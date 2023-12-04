@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 16:19:39 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/29 14:32:11 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:01:43 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ShrubberyCreationForm::DIY() const {
 	std::ofstream outfile(fileName.c_str(), std::ofstream::trunc);
 	if (!outfile) {
 		outfile.close();
-		throw FormIsNotAssigned(this);
+		throw FormIsNotAssigned();
 		return ;
 	}
 

@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:55:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/30 12:49:46 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:01:32 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ AForm::AForm() :
 
 AForm::AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable) :
 	name(name), assign(assign), grade_assingnable(grade_assingnable), grade_executable(grade_executable) {
+		if (grade_assingnable < 1 || grade_executable < 1)
+			throw GradeTooHighException();
+		else if (grade_assingnable > 150 || grade_executable > 150)
+			throw GradeTooLowException();
 		std::cout << "The AForm was created with all the content." << std::endl;
 }
 
@@ -47,7 +51,7 @@ AForm::~AForm() {
 
 void AForm::beSigned(Bureaucrat& officer) {
 	if (officer.getGrade() > this->grade_assingnable)
-		throw GradeTooLowException(this);
+		throw GradeTooLowException();
 	else
 	{
 		this->assign = true;
@@ -74,40 +78,28 @@ int const & AForm::getGradeExecutable(void)  {
 void AForm::checkGrade(int grade_assingnable, int grade_executable)
 {
 	if (grade_assingnable < 1 || grade_executable < 1)
-		throw GradeTooHighException(this);
+		throw GradeTooHighException();
 	else if (grade_assingnable > 150 || grade_executable > 150)
-		throw GradeTooLowException(this);
+		throw GradeTooLowException();
 }
 
 const char * AForm::GradeTooHighException::what() const throw() {
 	return ("Grade is too high.");
 }
 
-const AForm *AForm::GradeTooHighException::clean() const throw() {
-	return inform;
-}
-
 const char * AForm::GradeTooLowException::what() const throw() {
 	return ("Grade is too low.");
-}
-
-const AForm *AForm::GradeTooLowException::clean() const throw() {
-	return inform;
 }
 
 const char * AForm::FormIsNotAssigned::what() const throw() {
 	return ("Form is not assigned.");
 }
 
-const AForm *AForm::FormIsNotAssigned::clean() const throw() {
-	return inform;
-}
-
 void AForm::execute(Bureaucrat const & executor) const {
 	if (!assign)
-		throw FormIsNotAssigned(this);
+		throw FormIsNotAssigned();
 	if (executor.getGrade() > grade_executable)
-		throw GradeTooLowException(this);
+		throw GradeTooLowException();
 	DIY();
 }
 

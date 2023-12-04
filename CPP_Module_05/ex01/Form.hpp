@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:09:52 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 16:17:31 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:29:18 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ class Form {
 						virtual const char *what() const throw();
 			};
 	private:
-			const std::string name;
-			bool assign;
-			const int grade_assingnable;
-			const int grade_executable;
+			const std::string _name;
+			bool _assign;
+			const int _grade_assingnable;
+			const int _grade_executable;
 };
 std::ostream& operator<<(std::ostream& content, Form& i);
 

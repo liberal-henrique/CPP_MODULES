@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 10:55:42 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/27 15:55:02 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:56:51 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ AForm::AForm()
 
 AForm::AForm(const std::string &name, bool assign, int grade_assingnable, int grade_executable) :
 	name(name), assign(assign), grade_assingnable(grade_assingnable), grade_executable(grade_executable) {
+		if (grade_assingnable < 1 || grade_executable < 1)
+			throw GradeTooHighException();
+		else if (grade_assingnable > 150 || grade_executable > 150)
+			throw GradeTooLowException();
 		std::cout << "The AForm was created with all the content." << std::endl;
 }
 
