@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:48:47 by lliberal          #+#    #+#             */
-/*   Updated: 2023/11/25 16:28:24 by lliberal         ###   ########.fr       */
+/*   Updated: 2023/12/04 10:33:10 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,36 +32,40 @@ int main()
 	
     tmp = src->createMateria("ice");
     me->equip(tmp);
-	std::cout << "------------------------" << std::endl;
-	std::cout << "2" << std::endl;
-    tmp = src->createMateria(NULL);
     me->equip(tmp);
-	std::cout << "------------------------" << std::endl;
-	std::cout << "3" << std::endl;
-	tmp = src->createMateria("cure");
     me->equip(tmp);
-	std::cout << "------------------------" << std::endl;
-	std::cout << "4" << std::endl;
-	tmp = src->createMateria("cure");
     me->equip(tmp);
-	std::cout << "------------------------" << std::endl;
-	std::cout << "5" << std::endl;
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	std::cout << "************************" << std::endl;
-	std::cout << "------------------------" << std::endl;
-	std::cout << "6" << std::endl;
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	std::cout << "************************" << std::endl;
-    ICharacter* bob = new Character("bob");
-	std::cout << "------------------------" << std::endl;
-    me->use(0, *bob);
-	std::cout << "------------------------" << std::endl;
-	me->use(0, *bob);
-	std::cout << "------------------------" << std::endl;
 
-    delete bob;
+	std::cout << "------------------------" << std::endl;
+	// std::cout << "2" << std::endl;
+    // tmp = src->createMateria(NULL);
+    // me->equip(tmp);
+	// std::cout << "------------------------" << std::endl;
+	// std::cout << "3" << std::endl;
+	// tmp = src->createMateria("cure");
+    // me->equip(tmp);
+	// std::cout << "------------------------" << std::endl;
+	// std::cout << "4" << std::endl;
+	// tmp = src->createMateria("cure");
+    // me->equip(tmp);
+	// std::cout << "------------------------" << std::endl;
+	// std::cout << "5" << std::endl;
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
+	// std::cout << "************************" << std::endl;
+	// std::cout << "------------------------" << std::endl;
+	// std::cout << "6" << std::endl;
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
+	// std::cout << "************************" << std::endl;
+    // ICharacter* bob = new Character("bob");
+	// std::cout << "------------------------" << std::endl;
+    // me->use(0, *bob);
+	// std::cout << "------------------------" << std::endl;
+	// me->use(0, *bob);
+	// std::cout << "------------------------" << std::endl;
+
+    // delete bob;
     delete me;
     delete src;
     return 0;
