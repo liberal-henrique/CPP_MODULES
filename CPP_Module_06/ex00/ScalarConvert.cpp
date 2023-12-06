@@ -111,7 +111,7 @@ void displaySpecialFloatCases(std::string element) {
 	std::cout << "Int: Non Displayable" << std::endl;
 	ScalarConvert::toFloat = (std::atof(element.c_str()));
 	ScalarConvert::toDouble = static_cast<double>(std::atof(element.c_str()));
-	std::cout << "Float: " << std::setprecision(7) << ScalarConvert::toFloat << "f" << std::endl;
+	std::cout << "Float: " << std::fixed << std::setprecision(7) << ScalarConvert::toFloat << "f" << std::endl;
 	std::cout << "Double: " << std::setprecision(15) << ScalarConvert::toDouble << std::endl;
 }
 
@@ -163,13 +163,14 @@ void	ScalarConvert::identifyType(std::string element) {
 }
 
 void ScalarConvert::display() {
+
 	if (isprint(toChar))
 		std::cout << "Char: '" << toChar << "'" << std::endl;
 	else
 		std::cout << "Char: Non Displayable" << toChar << std::endl;
 	std::cout << "Int: " << toInt << std::endl;
-	std::cout << "Float: " << std::setprecision(7) << toFloat << "f" << std::endl;
-	std::cout << "Double: " << std::setprecision(15) << toDouble << std::endl;
+	std::cout << "Float: " << std::setprecision(7) << toFloat << (toDouble - toInt == 0 ? ".0f" : "f") << std::endl;
+	std::cout << "Double: " << std::setprecision(15) << toDouble << (toDouble - toInt == 0 ? ".0" : "") << std::endl;
 }
 
 void ScalarConvert::manager(std::string element) {

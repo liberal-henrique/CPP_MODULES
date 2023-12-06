@@ -43,7 +43,7 @@ void Warlock::learnSpell(ASpell *spell) {
             _SpellBook.insert(std::make_pair(spell->getName(), spell->clone()));
 }
 
-void Warlock::forgetSpell(std::string const &spellName) {
+void Warlock::forgetSpell(std::string spellName) {
     std::map<std::string, ASpell *>::iterator it = _SpellBook.find(spellName);
     if (it != _SpellBook.end()) {
         delete it->second;
@@ -57,7 +57,7 @@ void Warlock::forgetSpell(std::string const &spellName) {
     
 }
 
-void Warlock::launchSpell(std::string const &spellName, ATarget const &target) {
+void Warlock::launchSpell(std::string spellName, ATarget const &target) {
     if (_SpellBook.find(spellName) != _SpellBook.end())
         _SpellBook[spellName]->launch(target);
 }
