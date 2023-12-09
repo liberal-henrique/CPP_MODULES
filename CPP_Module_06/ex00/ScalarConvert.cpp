@@ -167,7 +167,7 @@ void ScalarConvert::display() {
 	if (isprint(toChar))
 		std::cout << "Char: '" << toChar << "'" << std::endl;
 	else
-		std::cout << "Char: Non Displayable" << toChar << std::endl;
+		std::cout << "Char: Non Displayable." << std::endl;
 	std::cout << "Int: " << toInt << std::endl;
 	std::cout << "Float: " << std::setprecision(7) << toFloat << (toDouble - toInt == 0 ? ".0f" : "f") << std::endl;
 	std::cout << "Double: " << std::setprecision(15) << toDouble << (toDouble - toInt == 0 ? ".0" : "") << std::endl;

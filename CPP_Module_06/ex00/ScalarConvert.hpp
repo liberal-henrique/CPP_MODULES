@@ -19,7 +19,7 @@
 # include <cstddef>        // std::size_t
 # include <iomanip>
 #include <limits.h>
-# include <bits/stdc++.h> 
+// # include <bits/stdc++.h> 
 
 class ScalarConvert {
 	public:
