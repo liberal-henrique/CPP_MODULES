@@ -1,9 +1,9 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	ScalarConvert
+NAME		=	Serializer
 
-SRCS		=	main.cpp ScalarConvert.cpp
+SRCS		=	main.cpp Serializer.cpp
 
 all: $(NAME)
 

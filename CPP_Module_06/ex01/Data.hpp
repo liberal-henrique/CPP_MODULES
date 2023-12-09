@@ -13,7 +13,9 @@
 #ifndef DATA_HPP
 #define DATA_HPP
 
-struct Data {
+typedef struct s_data t_data;
+ 
+struct s_data {
 	int	n;
 	char c;
 };

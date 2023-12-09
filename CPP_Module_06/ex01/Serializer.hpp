@@ -19,17 +19,19 @@
 # include <cstddef>        // std::size_t
 # include <iomanip>
 #include <limits.h>
-# include <bits/stdc++.h>
+// # include <bits/stdc++.h>
 # include "Data.hpp"
 
 class Serializer {
+	public:
+		~Serializer();
+		static uintptr_t serialize(t_data* ptr);
+		static t_data* deserialize(uintptr_t raw);
+
+	private:
 		Serializer();
 		Serializer(Serializer const & copy);
-		~Serializer();
 		Serializer &operator=(Serializer const &copy);
-
-		uintptr_t serialize(Data* ptr);
-		Data* deserialize(uintptr_t raw);
 };
 
 #endif
