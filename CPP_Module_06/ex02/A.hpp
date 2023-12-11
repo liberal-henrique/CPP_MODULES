@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef A_HPP
+# define A_HPP
 
-#include <iostream>
-#include <stdlib.h>
+#include "Base.hpp"
 
-class Base {
-	public:
-		virtual ~Base();
+class A : public Base {
+
 };
 
 #endif
