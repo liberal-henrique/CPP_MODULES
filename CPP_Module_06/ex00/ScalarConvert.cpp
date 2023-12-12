@@ -77,32 +77,32 @@ bool checker(std::string element) {
 	return (true);
 }
 
-void ScalarConvert::convertInput(char c) {
-	toChar = c;
-	toInt = static_cast<int>(c);
-	toFloat = static_cast<float>(c);
-	toDouble = static_cast<double>(c);
+void input(char c) {
+	ScalarConvert::toChar = c;
+	ScalarConvert::toInt = static_cast<int>(c);
+	ScalarConvert::toFloat = static_cast<float>(c);
+	ScalarConvert::toDouble = static_cast<double>(c);
 }
 
-void ScalarConvert::convertInput(float f) {
-	toChar = static_cast<char>(f);
-	toInt = static_cast<int>(f);
-	toFloat = f;
-	toDouble = static_cast<double>(f);
+void input(float f) {
+	ScalarConvert::toChar = static_cast<char>(f);
+	ScalarConvert::toInt = static_cast<int>(f);
+	ScalarConvert::toFloat = f;
+	ScalarConvert::toDouble = static_cast<double>(f);
 }
 
-void ScalarConvert::convertInput(double d) {
-	toChar = static_cast<char>(d);
-	toInt = static_cast<int>(d);
-	toFloat = static_cast<float>(d);
-	toDouble = d;
+void input(double d) {
+	ScalarConvert::toChar = static_cast<char>(d);
+	ScalarConvert::toInt = static_cast<int>(d);
+	ScalarConvert::toFloat = static_cast<float>(d);
+	ScalarConvert::toDouble = d;
 }
 
-void ScalarConvert::convertInput(int i) {
-	toChar = static_cast<char>(i);
-	toInt = i;
-	toFloat = static_cast<float>(i);
-	toDouble = static_cast<double>(i);
+void input(int i) {
+	ScalarConvert::toChar = static_cast<char>(i);
+	ScalarConvert::toInt = i;
+	ScalarConvert::toFloat = static_cast<float>(i);
+	ScalarConvert::toDouble = static_cast<double>(i);
 }
 
 void displaySpecialFloatCases(std::string element) {
@@ -134,7 +134,7 @@ void displaySpecialDoubleCases(std::string element) {
 // 		protect == false;
 // }
 
-void	ScalarConvert::identifyType(std::string element) {
+void	identifyType(std::string element) {
 
 	if (!element.compare("-inff") || !element.compare("+inff") || !element.compare("nanf")) {
 		displaySpecialFloatCases(element);
@@ -146,34 +146,34 @@ void	ScalarConvert::identifyType(std::string element) {
 	}
 	if (element.size() == 1 && !isdigit(element[0])) {
 		std::cout << "This is a char." << std::endl;
-		convertInput(element.at(0));
+		input(element.at(0));
 	}
 	else if (element.find('f') != std::string::npos) {
 		std::cout << "This is a float." << std::endl;
-		convertInput(std::atof(element.c_str()));
+		input(std::atof(element.c_str()));
 	}
 	else if ((element.find('.') != std::string::npos)) {
 		std::cout << "This is a double." << std::endl;
-		convertInput(std::atof(element.c_str()));
+		input(std::atof(element.c_str()));
 	} else {
 		std::cout << "This is a integer." << std::endl;
-		convertInput(std::atoi(element.c_str()));
+		input(std::atoi(element.c_str()));
 	}
 	display();
 }
 
-void ScalarConvert::display() {
+void display() {
 
-	if (isprint(toChar))
-		std::cout << "Char: '" << toChar << "'" << std::endl;
+	if (isprint(ScalarConvert::toChar))
+		std::cout << "Char: '" << ScalarConvert::toChar << "'" << std::endl;
 	else
 		std::cout << "Char: Non Displayable." << std::endl;
-	std::cout << "Int: " << toInt << std::endl;
-	std::cout << "Float: " << std::setprecision(7) << toFloat << (toDouble - toInt == 0 ? ".0f" : "f") << std::endl;
-	std::cout << "Double: " << std::setprecision(15) << toDouble << (toDouble - toInt == 0 ? ".0" : "") << std::endl;
+	std::cout << "Int: " << ScalarConvert::toInt << std::endl;
+	std::cout << "Float: " << std::setprecision(7) << ScalarConvert::toFloat << (ScalarConvert::toDouble - ScalarConvert::toInt == 0 ? ".0f" : "f") << std::endl;
+	std::cout << "Double: " << std::setprecision(15) << ScalarConvert::toDouble << (ScalarConvert::toDouble - ScalarConvert::toInt == 0 ? ".0" : "") << std::endl;
 }
 
-void ScalarConvert::manager(std::string element) {
+void manager(std::string element) {
 	if (!checker(element)) {
 		std::cout << "Invalid input" << std::endl;
 		return ;

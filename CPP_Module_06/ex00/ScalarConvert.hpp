@@ -23,25 +23,28 @@
 
 class ScalarConvert {
 	public:
-		ScalarConvert();
-		ScalarConvert(ScalarConvert const & copy);
-		ScalarConvert &operator=(ScalarConvert const &copy);
 		~ScalarConvert();
-		static void manager(std::string element);
-		void	protectInt(std::string element);
-		static void	identifyType(std::string element);
-		static void	display();
-		static void convertInput(char c);
-		static void convertInput(int i);
-		static void convertInput(float f);
-		static void convertInput(double d);
-
+		static void convert(std::string literal);
 		static char		toChar;
 		static int		toInt;
 		static float	toFloat;
 		static double	toDouble;
-
 		bool protect;
+		
+	private:
+		ScalarConvert();
+		ScalarConvert(ScalarConvert const & copy);
+		ScalarConvert &operator=(ScalarConvert const &copy);
 };
+void manager(std::string element);
+void protectInt(std::string element);
+void displaySpecialDoubleCases(std::string element);
+void displaySpecialFloatCases(std::string element);
+void	identifyType(std::string element);
+void	display();
+void input(char c);
+void input(int i);
+void input(float f);
+void input(double d);
 
 #endif

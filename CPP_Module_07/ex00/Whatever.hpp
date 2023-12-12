@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConvert.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 08:56:38 by lliberal          #+#    #+#             */
-/*   Updated: 2023/12/04 11:42:16 by lliberal         ###   ########.fr       */
+/*   Created: 2023/11/29 08:53:51 by lliberal          #+#    #+#             */
+/*   Updated: 2023/12/04 12:44:56 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConvert.hpp"
+#ifndef WHATEVER_HPP
+#define WHATEVER_HPP
 
-int main(int ac, char **av) {
-	if (ac != 2) {
-		std::cerr << "Invalid arguments!" << std::endl;
-		std::cerr << "Try: ./ScalarConvert <number>" << std::endl;
-		return (1);
-	}
-	
-	ScalarConvert::convert(av[1]);
-	return (0);
-}
+#include "iostream"
+
+template <typename T>
+void swap(T &a, T &b);
+
+template <typename T>
+T min(T &a, T &b);
+
+template <typename T>
+T max(T &a, T &b);
+
+#endif 
