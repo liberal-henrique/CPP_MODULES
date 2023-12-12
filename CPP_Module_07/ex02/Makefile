@@ -1,7 +1,7 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	template01
+NAME		=	template02
 
 SRCS		=	main.cpp
 
