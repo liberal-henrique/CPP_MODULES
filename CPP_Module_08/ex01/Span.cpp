@@ -26,6 +26,17 @@ void Span::addNumber(int number) {
 		_myArr.push_back(number);
 }
 
+void Span::addNumber(int first, int last) {
+	int difference = last - first;
+	if (last <= first 
+		|| _myArr.size() == N 
+			|| (_myArr.size() + difference) >= N)
+		throw impossibleAddNumber();
+	std::vector<int>::iterator it = _myArr.begin();
+	for (int i = first; i <= last; i++)
+		_myArr.push_back(i);
+}
+
 void Span::printVector(void) {
 	std::vector<int>::iterator it;
 	for (it = _myArr.begin(); it != _myArr.end(); ++it)
@@ -47,9 +58,13 @@ int Span::shortestSpan() {
 	return (smaller);
 }
 
-std::vector<int>::iterator Span::longestSpan() {
-	std::sort(_myArr.begin(), _myArr.end());
-
+int Span::longestSpan() {
+	if (_myArr.size() < 2)
+		throw notEnoughElement();
+	std::vector<int> tmp = _myArr;
+	std::sort(tmp.begin(), tmp.end());
+	int biggest = tmp.back() - tmp.front();
+	return (biggest);
 }
 
 const char * Span::impossibleAddNumber::what() const throw() {
@@ -59,3 +74,10 @@ const char * Span::impossibleAddNumber::what() const throw() {
 const char * Span::notEnoughElement::what() const throw() {
 	return ("There isn't elements enough.");
 }
+
+int Span::operator[](unsigned int i) const {
+	if (_myArr.size() <= i) 
+		throw notEnoughElement();
+	return (_myArr[i]);
+}
+

@@ -31,9 +31,11 @@ class Span {
 			Span &operator=(Span const &other);
 			~Span();
 			void addNumber(int number);
+			void addNumber(int first, int last);
 			void printVector(void);
 			int shortestSpan();
-			std::vector<int>::iterator longestSpan();
+			int longestSpan();
+			int operator[](unsigned int i) const;
 			class impossibleAddNumber : public std::exception {
 				public:
 						virtual const char *what() const throw();
@@ -43,5 +45,6 @@ class Span {
 						virtual const char *what() const throw();
 			};
 };
+std::ostream& operator<<(std::ostream& content, Span& i);
 
 #endif
