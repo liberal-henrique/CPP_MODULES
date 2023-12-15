@@ -10,43 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-#define SPAN_HPP
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
-#include <algorithm>
+#include <stack>
 #include <iostream>
-#include <stdlib.h>
-#include <vector>
-#include <exception>
+#include <algorithm>
 
-class Span {
-	private:
-			unsigned int N;
-			std::vector<int> _myArr;
-			Span();
-
+template <typename T>
+class MutantStack : public std::stack<T> {
 	public:
-			Span(int element);
-			Span(Span const &other);
-			Span &operator=(Span const &other);
-			~Span();
-			void addNumber(int number);
-			void addNumber(int first, int last);
-			void printVector(void);
-			int shortestSpan();
-			int longestSpan();
-			int operator[](unsigned int i) const;
-			class impossibleAddNumber : public std::exception {
-				public:
-						virtual const char *what() const throw();
+			typedef typename std::stack<T>::container_type::iterator iterator;
+			typedef typename std::stack<T>::container_type::iterator const_iterator;
+			
+			MutantStack();
+			MutantStack(MutantStack const &other) {
+				*this = other;
 			};
-			class notEnoughElement : public std::exception {
-				public:
-						virtual const char *what() const throw();
+			~MutantStack() {};
+			MutantStack & operator=(MutantStack const &other) {
+				if (this != &other)
+					std::stack<T>::operator=(other);
+				return (*this);
 			};
+
+			iterator begin() {
+				return this->c.begin();
+			}
+			iterator end() {
+				return this->c.end();
+			}
+			const_iterator cbegin() {
+				return this->c.begin();
+			}
+			const_iterator cend() {
+				return this->c.end();
+			}
 };
-// std::ostream& operator<<(std::ostream& content, Span& i);
-// static void printVector(std::vector<int> &myVector);
+
+
+
+// template <typename T>
+// std::ostream& operator<<(std::ostream& content, const typename MutantStack<T>::iterator& i ) {
+// 	content << *i;
+// 	return (content);
+// }
+
 
 
 #endif

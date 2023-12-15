@@ -1,9 +1,9 @@
 CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
-NAME		=	ex01
+NAME		=	ex02
 
-SRCS		=	main.cpp Span.cpp
+SRCS		=	main.cpp
 
 all: $(NAME)
 

@@ -32,7 +32,6 @@ void Span::addNumber(int first, int last) {
 		|| _myArr.size() == N 
 			|| (_myArr.size() + difference) >= N)
 		throw impossibleAddNumber();
-	std::vector<int>::iterator it = _myArr.begin();
 	for (int i = first; i <= last; i++)
 		_myArr.push_back(i);
 }
@@ -48,12 +47,11 @@ int Span::shortestSpan() {
 		throw notEnoughElement();
 	std::vector<int> tmp = _myArr;
 	std::sort(tmp.begin(), tmp.end());
-	std::vector<int>::iterator it;
-	int smaller;
-
+	std::vector<int>::iterator it = tmp.begin();
+	int smaller = *it - *(it - 1);
 	for (it = tmp.begin(); it != (tmp.end()); ++it) {
 		if (it != tmp.begin())
-			smaller = std::min((*it - (*it - 1)), smaller);
+			smaller = std::min((*it - *(it - 1)), smaller);
 	}
 	return (smaller);
 }
@@ -81,3 +79,8 @@ int Span::operator[](unsigned int i) const {
 	return (_myArr[i]);
 }
 
+// static void printVector(std::vector<int> &myVector) {
+// 	std::vector<int>::iterator it;
+// 	for (it = myVector.begin(); it != myVector.end(); ++it)
+// 		std::cout << *it << ", ";
+// }
