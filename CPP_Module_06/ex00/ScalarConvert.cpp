@@ -134,7 +134,7 @@ void displaySpecialDoubleCases(std::string element) {
 // 		protect == false;
 // }
 
-void	identifyType(std::string element) {
+void	convert(std::string element) {
 
 	if (!element.compare("-inff") || !element.compare("+inff") || !element.compare("nanf")) {
 		displaySpecialFloatCases(element);
