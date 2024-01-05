@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:51:22 by lliberal          #+#    #+#             */
-/*   Updated: 2024/01/05 12:37:43 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/05 20:01:38 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <iomanip>
 #include <limits.h>
 #include <sstream>
+#include <algorithm>
 
 
 class ScalarConvert {
@@ -29,7 +30,7 @@ class ScalarConvert {
 		~ScalarConvert();
 		static void convert(std::string element);
 		static char		toChar;
-		static int		toInt;
+		static long int	toInt;
 		static float	toFloat;
 		static double	toDouble;
 		bool protect;
@@ -46,7 +47,7 @@ void displaySpecialFloatCases(std::string element);
 // void	identifyType(std::string element);
 void	display();
 void input(char c);
-void input(int i);
+void input(long int i);
 void input(float f);
 void input(double d);
 
