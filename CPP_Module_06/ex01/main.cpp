@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:36:55 by lliberal          #+#    #+#             */
-/*   Updated: 2023/12/04 14:42:35 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:39:11 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,28 @@
 
 // }
 
-
-// int	main(void)
-// {
-// 	t_data		*original = new t_data;
+// 
+int	main(void)
+{
+	t_data		*original = new t_data;
+	// int value
+	original->n = 65;
+	// char value
+	original->c = 'r';
 	
-// 	original->n = 65;
-// 	original->c = 'r';
-// 	std::cout << "Original Data *:\t\t" << original << std::endl;
-// 	std::cout << "Original values:\t\t" << original->n << "\t" << original->c << std::endl;
-
-// 	uintptr_t	serialized;
-// 	t_data		*finalRes;
-	
-// 	serialized = Serializer::serialize(original);
-// 	std::cout << "\nUintptr after serializer:\t" << serialized << std::endl;
-	
-// 	finalRes = Serializer::deserialize(serialized);
-// 	std::cout << "\nData * after deserializer:\t" << finalRes << std::endl;
-// 	std::cout << "Values after deserializer:\t" << finalRes->n << "\t" << finalRes->c << std::endl;
-	
-// 	delete original;
-// }
+	std::cout << "Original Data *:\t\t" << original << std::endl;
+	std::cout << "Original values:\t\t" << original->n << "\t" << original->c << std::endl;
+// 
+	uintptr_t	serialized;
+	t_data		*finalRes;
+	// 
+	serialized = Serializer::serialize(original);
+	std::cout << "\nUintptr after serializer:\t" << serialized << std::endl;
+	// 
+	finalRes = Serializer::deserialize(serialized);
+	std::cout << "\nData * after deserializer:\t" << finalRes << std::endl;
+	std::cout << "Values after deserializer:\t" << finalRes->n << "\t" << finalRes->c << std::endl;
+	// 
+	delete original;
+}
+// 

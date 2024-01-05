@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
-
 // int main(void) {
 // 	Array<int>  liberal(94);
 
@@ -24,7 +22,7 @@
 // }
 
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
 int main(int, char**)

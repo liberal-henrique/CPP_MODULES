@@ -42,7 +42,7 @@ class Array {
 		};
 		Array<T> & operator[](int size) {
 			if (size < 0 || size >= static_cast<int>(_len))
-				throw(outOfLimits);
+				throw outOfLimits();
 			return (_arr[size]);
 		};
 		~Array() {

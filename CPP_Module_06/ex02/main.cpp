@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:43:39 by lliberal          #+#    #+#             */
-/*   Updated: 2023/12/04 14:51:05 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:33:22 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int main(void) {
 	identify(test);
 	std::cout << "Reference: " << std::endl;
 	identify(*test);
+	delete test;
 }
 
 Base *generate(void) {
-	std::srand(std::time(0));
+	std::srand(::time(0));
 	int rand1 = std::rand() % 3;
 
 	if (rand1 == 0) {
@@ -77,7 +78,3 @@ void identify(Base &p) {
 	}
 	catch(std::exception &e) {}
 }
-
-
-
-

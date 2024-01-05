@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:51 by lliberal          #+#    #+#             */
-/*   Updated: 2023/12/04 12:44:56 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:43:16 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,32 +133,47 @@ void displaySpecialDoubleCases(std::string element) {
 // 	if (test > INT_MAX || test < INT_MIN)
 // 		protect == false;
 // }
+//static void convert(std::string element);
+void	ScalarConvert::convert(std::string element) {
+	
 
-void	convert(std::string element) {
-
-	if (!element.compare("-inff") || !element.compare("+inff") || !element.compare("nanf")) {
+	if (!element.compare("-inff") || !element.compare("+inff") || !element.compare("inff") || !element.compare("nanf")) {
 		displaySpecialFloatCases(element);
 		return ;
 	}
-	if (!element.compare("-inf") || !element.compare("+inf") || !element.compare("nan")) {
+	if (!element.compare("-inf") || !element.compare("+inf") || !element.compare("inf") || !element.compare("nan")) {
 		displaySpecialDoubleCases(element);
 		return ;	
 	}
-	if (element.size() == 1 && !isdigit(element[0])) {
-		std::cout << "This is a char." << std::endl;
-		input(element.at(0));
+
+    std::istringstream iss(element);
+
+	if (iss >> toChar) {
+		if (iss.peek() == EOF) {
+			std::cout << "This is a char." << std::endl;
+			input(toChar);
+		}
+		else {
+			std::cout << "Input unavailable." << std::endl;
+			return ;
+		}
 	}
-	else if (element.find('f') != std::string::npos) {
-		std::cout << "This is a float." << std::endl;
-		input(std::atof(element.c_str()));
-	}
-	else if ((element.find('.') != std::string::npos)) {
-		std::cout << "This is a double." << std::endl;
-		input(std::atof(element.c_str()));
-	} else {
-		std::cout << "This is a integer." << std::endl;
-		input(std::atoi(element.c_str()));
-	}
+	else if (element.find('.') != std::string::npos && iss >> toDouble)
+	else if (element.find('f') != std::string::npos && iss >> toFloat)
+// 	// if (element.size() == 1 && !isdigit(element[0])) {
+// 	// 	std::cout << "This is a char." << std::endl;
+// 	// }
+// 	// else if (element.find('f') != std::string::npos) {
+// 	// 	std::cout << "This is a float." << std::endl;
+// 	// 	input(std::atof(element.c_str()));
+// 	// }
+// 	// else if ((element.find('.') != std::string::npos)) {
+// 	// 	std::cout << "This is a double." << std::endl;
+// 	// 	input(std::atof(element.c_str()));
+// 	// } else {
+// 	// 	std::cout << "This is a integer." << std::endl;
+// 	// 	input(std::atoi(element.c_str()));
+// 	// }
 	display();
 }
 
@@ -178,5 +193,5 @@ void manager(std::string element) {
 		std::cout << "Invalid input" << std::endl;
 		return ;
 	}
-	identifyType(element);
+    ScalarConvert::convert(element);
 }
