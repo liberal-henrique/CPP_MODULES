@@ -134,6 +134,15 @@ void displaySpecialDoubleCases(std::string element) {
 // 		protect == false;
 // }
 //static void convert(std::string element);
+
+bool	isNumber(std::string str) {
+	for (std::size_t i = 0; i < str.size(); i++) {
+		if (!std::isdigit(str[i])) {
+			return false;
+		}
+	}
+	return true;
+}
 void	ScalarConvert::convert(std::string element) {
 	
 
@@ -146,9 +155,9 @@ void	ScalarConvert::convert(std::string element) {
 		return ;	
 	}
 
-    std::istringstream iss(element);
-
-	if (iss >> toChar) {
+	if (!isNumber(element)) {
+		std::istringstream iss(element);
+		iss >> toChar;
 		if (iss.peek() == EOF) {
 			std::cout << "This is a char." << std::endl;
 			input(toChar);
@@ -158,22 +167,40 @@ void	ScalarConvert::convert(std::string element) {
 			return ;
 		}
 	}
-	else if (element.find('.') != std::string::npos && iss >> toDouble)
-	else if (element.find('f') != std::string::npos && iss >> toFloat)
-// 	// if (element.size() == 1 && !isdigit(element[0])) {
-// 	// 	std::cout << "This is a char." << std::endl;
-// 	// }
-// 	// else if (element.find('f') != std::string::npos) {
-// 	// 	std::cout << "This is a float." << std::endl;
-// 	// 	input(std::atof(element.c_str()));
-// 	// }
-// 	// else if ((element.find('.') != std::string::npos)) {
-// 	// 	std::cout << "This is a double." << std::endl;
-// 	// 	input(std::atof(element.c_str()));
-// 	// } else {
-// 	// 	std::cout << "This is a integer." << std::endl;
-// 	// 	input(std::atoi(element.c_str()));
-// 	// }
+	else if (element.find('f') != std::string::npos) {
+		std::cout << "This is a float." << std::endl;
+		element.erase(element.size() - 1);
+        std::istringstream iss(element);
+        iss >> toFloat;
+		input(toFloat);
+	}
+	else if (element.find('.') != std::string::npos) {
+		std::cout << "This is a double." << std::endl;
+		std::istringstream iss(element);
+		iss >> toDouble;
+		input(toDouble);
+	}
+	else {
+		std::cout << "This is a integer." << std::endl;
+		std::istringstream iss(element);
+		iss >> toInt;
+		input(toInt);
+	}
+	// if (element.size() == 1 && !isdigit(element[0])) {
+	// 	std::cout << "This is a char." << std::endl;
+	// }
+	// else if (element.find('f') != std::string::npos) {
+	// 	std::cout << "This is a float." << std::endl;
+	// 	input(std::atof(element.c_str()));
+	// }
+	// else if ((element.find('.') != std::string::npos)) {
+	// 	std::cout << "This is a double." << std::endl;
+	// 	input(std::atof(element.c_str()));
+	// } 
+	// else {
+	// 	std::cout << "This is a integer." << std::endl;
+	// 	input(std::atoi(element.c_str()));
+	// }
 	display();
 }
 

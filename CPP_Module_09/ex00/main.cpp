@@ -15,10 +15,10 @@
 //Here, probably I will use the map container
 int main(int ac, char **av) {
 	if (ac != 2) {
-		std::err << "Write a filename." << std::endl;
+		std::cerr << "Write a filename." << std::endl;
 		return (1);
 	}
 	std::string fileName = av[1];
-	std::ifstream inputFile(fileName);
-	if (inputFile.is_open())
+	get_input_return_line(fileName);
+	return (0);
 }

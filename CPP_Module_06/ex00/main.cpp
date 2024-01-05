@@ -10,54 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "ScalarConvert.hpp"
+#include "ScalarConvert.hpp"
 
-// int main(int ac, char **av) {
-// 	if (ac != 2) {
-// 		std::cerr << "Invalid arguments!" << std::endl;
-// 		std::cerr << "Try: ./ScalarConvert <number>" << std::endl;
-// 		return (1);
-// 	}
+int main(int ac, char **av) {
+	if (ac != 2) {
+		std::cerr << "Invalid arguments!" << std::endl;
+		std::cerr << "Try: ./ScalarConvert <number>" << std::endl;
+		return (1);
+	}
 	
-// 	ScalarConvert::convert(av[1]);
-// 	return (0);
-// }
+	ScalarConvert::convert(av[1]);
+	return (0);
+}
 
 
 // verificar se ja recebemos com ponto
 
-#include <cstdio>
-#include <iostream>
-#include <sstream>
-#include <string>
+// #include <cstdio>
+// #include <iostream>
+// #include <sstream>
+// #include <string>
+// #include <iomanip>
 
-int main() {
-    std::string dataInterger = "10";
-    std::string dataFloat = "10.0f";
-    std::string dataDouble = "10.0";
-    
+// int main() {
+//     std::string value = "10.00001";
     
 
-    std::istringstream iss(dataString);
-    std::istringstream iss2(dataString2);
-    
+//     int intValue;
+//     float floatValue;
+//     double doubleValue;
 
-    char charValue;
-    char charValue2;
-    
-    if (iss >> charValue && iss.peek() == EOF) {
-        std::cout << "Char value: " << charValue << std::endl;
-    } else if (!iss.eof() && iss >> charValue) {
-        std::cout << "This is a string: " << charValue << std::endl;
-    }
-
-    if (iss2 >> charValue2 && iss2.peek() == EOF) {
-        std::cout << "Char value: " << charValue2 << std::endl;
-    } else if (!iss2.eof() && iss2 >> charValue2) {
-        std::cout << "This is a string: " << charValue2 << std::endl;
-    }
-    
-
-    return 0;
-}
+//     if (value.find('f') != std::string::npos) {
+//         value.erase(value.size() - 1);
+//         std::istringstream iss(value);
+//         iss >> floatValue;
+//         std::cout << "Float value: " << std::setprecision(7) << floatValue << std::endl;
+//     }
+//     else if (value.find('.') != std::string::npos) {
+//         std::istringstream iss(value);
+//         iss >> doubleValue;
+//         std::cout << "Double value: " << std::setprecision(15) << doubleValue << std::endl;
+//     }
+//     else {
+//         std::istringstream iss(value);
+//         iss >> intValue;
+//         std::cout << "Integer value: " << intValue << std::endl;
+//     }
+//     return 0;
+// }
 

@@ -3,7 +3,7 @@ CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	/bin/rm -f
 NAME		=	ScalarConvert
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp ScalarConvert.cpp
 
 all: $(NAME)
 
