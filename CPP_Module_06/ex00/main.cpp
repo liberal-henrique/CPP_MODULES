@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:56:38 by lliberal          #+#    #+#             */
-/*   Updated: 2024/01/05 12:44:46 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:57:07 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,6 @@ int main(int ac, char **av) {
 		std::cerr << "Try: ./ScalarConvert <number>" << std::endl;
 		return (1);
 	}
-	
 	ScalarConvert::convert(av[1]);
 	return (0);
 }
-
-
-// verificar se ja recebemos com ponto
-
-// #include <cstdio>
-// #include <iostream>
-// #include <sstream>
-// #include <string>
-// #include <iomanip>
-
-// int main() {
-//     std::string value = "10.00001";
-    
-
-//     int intValue;
-//     float floatValue;
-//     double doubleValue;
-
-//     if (value.find('f') != std::string::npos) {
-//         value.erase(value.size() - 1);
-//         std::istringstream iss(value);
-//         iss >> floatValue;
-//         std::cout << "Float value: " << std::setprecision(7) << floatValue << std::endl;
-//     }
-//     else if (value.find('.') != std::string::npos) {
-//         std::istringstream iss(value);
-//         iss >> doubleValue;
-//         std::cout << "Double value: " << std::setprecision(15) << doubleValue << std::endl;
-//     }
-//     else {
-//         std::istringstream iss(value);
-//         iss >> intValue;
-//         std::cout << "Integer value: " << intValue << std::endl;
-//     }
-//     return 0;
-// }
-

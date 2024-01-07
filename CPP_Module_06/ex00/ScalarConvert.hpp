@@ -6,7 +6,7 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:51:22 by lliberal          #+#    #+#             */
-/*   Updated: 2024/01/05 20:01:38 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:37:56 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ class ScalarConvert {
 	public:
 		~ScalarConvert();
 		static void convert(std::string element);
-		static char		toChar;
 		static long int	toInt;
-		static float	toFloat;
+		static char		toChar;
 		static double	toDouble;
-		bool protect;
+		static float	toFloat;
 		
 	private:
 		ScalarConvert();

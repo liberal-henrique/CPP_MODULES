@@ -6,16 +6,16 @@
 /*   By: lliberal <lliberal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:51 by lliberal          #+#    #+#             */
-/*   Updated: 2024/01/05 20:30:49 by lliberal         ###   ########.fr       */
+/*   Updated: 2024/01/06 15:22:38 by lliberal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConvert.hpp"
 
-char ScalarConvert::toChar;
-long int ScalarConvert::toInt;
-float ScalarConvert::toFloat;
-double ScalarConvert::toDouble;
+char ScalarConvert::toChar = 0;
+long int ScalarConvert::toInt = 0;
+float ScalarConvert::toFloat = 0;
+double ScalarConvert::toDouble = 0;
 
 ScalarConvert::ScalarConvert() {
 	std::cout << "The default constructor called." << std::endl;
@@ -203,8 +203,8 @@ void display() {
 	else
 		std::cout << "Char: Non Displayable." << std::endl;
 	std::cout << "Int: " << ScalarConvert::toInt << std::endl;
-	std::cout << "Float: " << std::setprecision(7) << ScalarConvert::toFloat << (ScalarConvert::toDouble - ScalarConvert::toInt == 0 ? ".0f" : "f") << std::endl;
-	std::cout << "Double: " << std::setprecision(15) << ScalarConvert::toDouble << (ScalarConvert::toDouble - ScalarConvert::toInt == 0 ? ".0" : "") << std::endl;
+	std::cout << "Float: " << ScalarConvert::toFloat << (ScalarConvert::toFloat - ScalarConvert::toInt == 0 ? ".0f" : "f") << std::endl;
+	std::cout << "Double: " << ScalarConvert::toDouble << (ScalarConvert::toDouble - ScalarConvert::toInt == 0 ? ".0" : "") << std::endl;
 }
 
 void manager(std::string element) {
